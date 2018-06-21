@@ -1,5 +1,4 @@
 MODULE mod_ed
-! modified 5/2/2013
  
   INTEGER,PARAMETER :: dp=kind(1d0)
   
