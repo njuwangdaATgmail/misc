@@ -1,0 +1,107 @@
+\documentclass[aps,preprint,superscriptaddress]{revtex4-1}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{update}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\be}{\mathbf{e}}
+%\newcommand{\bm}{\mathbf{m}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bN}{\mathbf{N}}
+%\newcommand{\bell}{\boldsymbol{\ell}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\btau}{\boldsymbol{\tau}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bi}{\mathbf{i}}
+\newcommand{\bj}{\mathbf{j}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\md}{\mathrm{d}}
+\newcommand{\ie}{\textit{i.e.{ }}}
+\newcommand{\etc}{\textit{etc.{ }}}
+\newcommand{\ddt}{\frac{\md}{\md t}}
+\newcommand{\ddtt}{\frac{\md^2}{\md t^2}}
+\newcommand{\ppt}{\frac{\partial}{\partial t}}
+\newcommand{\pptt}{\frac{\partial^2}{\partial t^2}}
+\newcommand{\me}{\mathrm{e}}
+
+
+%===============================================
+\begin{document}
+\title{Critical exponents of nonlinear sigma model on Grassmann manifold $U(N)/U(m)U(N-m)$ by $1/N$ expansion}
+\author{Shan-Yue Wang}
+\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+\author{Da Wang}\email{dawang@nju.edu.cn}
+\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+\author{Qiang-Hua Wang}\email{qhwang@nju.edu.cn}
+\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+\affiliation{another address}
+\begin{abstract}
+  Motivated by the numerical evidence of a continuous phase transition between Neel and paramagnetic phases in the SU(N) Hubbbard model, we studied its low energy nonlinear sigma model defined on Grassman manifold $U(N)/U(m)U(N-m)$ using the complex projective presentation, which is a direct generalization of the widely studied CP$^{N-1}$ model (corresponding to $m=1$). In space-time dimension $2<d<4$, to the first order of $1/N$, we calculate the critical exponents of the Neel moment, which are all functions of $m/N$ indicating that larger $m$ effectively reduces $N$ and thus brings stronger fluctuations around the $N=\infty$ fixed point. 
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+\section{Model}
+% from Hubbard model to SU(N)-AF representations, non linear sigma model and then derive the CP model
+The Neel order parameter of the SU(N) Hubbard model is described by $N_r=(-1)^r\langle \Psi_r^\dagger \sigma_b \Psi_r\rangle$. Take $N=4$ as an example, when $m=1$, $\sigma=diag\{3,-1,-1,-1\}$; when $m=2$, $\sigma=diag\{1,1,-1,-1\}$. 
+
+The AF-PM phase transition of the SU(N) Hubbard model can be described by a nonlinear sigma model
+\bea S=\frac{\rho_s}{2}\int \partial_\mu\bn \cdot \partial_\mu\bn \eea
+where $\rho_s$ is the spin stiffness, $\mu$ denotes the space-time indices, and $\bn$ is the normalized Neel moment which can be parametrized by a complex representation \bea n_b=\sum_i z_i^\dag \sigma_b z_i=\mathrm{Tr}(Z^\dag\sigma_b Z) \eea  where $Z$ is a complex $N\times m$ matrix and $\sigma_b (b\le N^2-1)$ denote the SU(N) group generators. In this work, we adopt the normalization condition $\mathrm{tr}(\sigma_b^2)=N$. Then, using the Fierz identity of the $SU(N)$ group
+\bea (\sigma_b)_{\alpha\beta} (\sigma_b)_{\gamma\delta}+\delta_{\alpha\beta}\delta_{\gamma\delta}=N\delta_{\alpha\delta}\delta_{\beta\gamma} \eea
+we get
+\bea \bn\cdot\bn = N\mathrm{Tr}(ZZ^\dag Z Z^\dag)-\mathrm{Tr}(ZZ^\dag)^2 \eea
+In order to maintain $\bn\cdot\bn=1$, we require a constraint condition \bea Z^\dag Z=\frac{1}{\sqrt{m(N-m)}}I \label{eq:normalizeZ}\eea
+which tells the $Z$ fields live on the Grassmann manifold $U(N)/U(m)U(N-m)$. 
+
+Now the nonlinear sigma model becomes
+\bea S=\frac{\rho_s}{2}\int\partial_\mu\bn \cdot \partial_\mu\bn&=&\frac{\rho_s}{2}\int\partial_\mu \mathrm{Tr}(Z^\dagger\sigma_b Z) \partial_\mu \mathrm{Tr}(Z^\dagger \sigma_b Z) \nonumber\\
+&=& N\rho_s \int\mathrm{Tr}\left[-(i\partial_\mu Z^\dagger Z) (-iZ^\dag \partial_\mu Z) + Z^\dag Z (i\partial_\mu Z^\dagger)(-i\partial_\mu Z)\right] \eea 
+After Hubbard-Stratonovich transformation, we get
+\bea S=N\rho_s\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] \eea
+The constraint condition Eq.~\eqref{eq:normalizeZ} can be incorporated by a real Lagrangian multiplier matrix $\lambda$, which then brings us to
+\bea \boxed{ S=N\rho_s\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] + i\int\mathrm{Tr}\left\{\lambda\left[Z^\dag Z-\frac{1}{\sqrt{m(N-m)}}I\right]\right\} } \eea
+We can also rescale $Z$ field to another form
+\bea \boxed{ S=\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] + i\int\mathrm{Tr}\left\{\lambda\left[Z^\dag Z-\frac{N\rho_s}{\sqrt{m(N-m)}}I\right]\right\} } \eea
+{\color{red} I prefer to use the second form in the following since the propagators and vertices are as usual. We can also define a new parameter $g$ such that the constraint condition is $Z^\dag Z=(N/g)I$ or $(2N/g)I$ as in different literatures.} Notice the representation $n_b=\mathrm{Tr}(Z^\dag \sigma_b Z)$ has a gauge redundancy, \ie $Z\rightarrow ZU$ (with $U$ a $m\times m$ unitary matrix). Therefore, the gauge field is also non Abelian and can be parametrized as $A_\mu=f^aA_\mu^a$ [$f^a$ are adjoint representation of $SU(m)$ with $0\le a\le m^2-1$].
+
+
+%Integrate over $Z$ and $Z^\dag$, we get
+%\bea S_{\rm eff}=N\mathrm{Tr}\log(G^{-1})-i\frac{N\rho_s}{\sqrt{m(N-m)}}\mathrm{Tr}(\lambda) \label{eq:Seff}\eea
+%where the prefactor $N$ in the first term comes from the sum of the SU(N) index. Now the $\mathrm{Tr}$ means summation over all remaining spaces: $d+1$-spacetime and m-dimensional subspace. The explicit expression of $G^{-1}$ is
+%\bea G^{-1}(ki;k'j)&=&k^2\delta_{kk'}\delta_{ij}+k A_{ji}(k-k')+k' A_{ij}(k-k')+A_{\ell i}(p)A_{j \ell}(k-k'-p) \nonumber\\ &+& i\lambda_{ji}(k-k') \eea
+\section{Large-N limit}
+
+\section{1/N expansion}
+
+\section{Summary}
+
+\begin{acknowledge}
+  We thank Katanin, Irkhin, and xxx.
+  This work is supported by NSFC (Nos. xxxx and yyyy).
+\end{acknowledge}
+
+\bibliography{cpNm}
+\end{document}
