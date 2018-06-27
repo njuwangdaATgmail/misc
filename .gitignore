@@ -81,3 +81,5 @@ hist
 *.pdfsync
 *_latexmk
 *Notes.bib
+
+template*.pdf
