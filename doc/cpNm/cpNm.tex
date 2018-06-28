@@ -1,4 +1,4 @@
-\documentclass[aps,preprint,superscriptaddress]{revtex4-1}
+\documentclass[aps,twocolumn,superscriptaddress]{revtex4-1}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -65,38 +65,49 @@
 
 \section{Model}
 % from Hubbard model to SU(N)-AF representations, non linear sigma model and then derive the CP model
-The Neel order parameter of the SU(N) Hubbard model is defined by $S_i=(-1)^i\langle \Psi_i^\dagger \sigma_b \Psi_i\rangle$ where $\Psi_i$ is an N-flavor fermion field and $\sigma_b$ ($1\le b\le N^2-1$) denote the SU(N) group generators with normalization condition $\mathrm{tr}(\sigma_b^2)=N$ in this work. All these $N^2-1$ branches of AF fluctuations degenerate in normal state while they are allowed to break into different kinds of ordered states corresponding to different representations.
+The Neel order parameter of the SU(N) Hubbard model is defined by \bea \mathcal{N}_i=(-1)^i\langle \Psi_i^\dagger \sigma_b \Psi_i\rangle \eea where $\Psi_i$ is an N-flavor fermion field and $\sigma_b$ ($1\le b\le N^2-1$) denote the SU(N) group generators with normalization condition $\mathrm{tr}(\sigma_b^2)=N$ during this work. In the normal state all these $N^2-1$ branches of magnetic modes degenerate indicating the SU(N) symmetry. While in the Neel state, the SU(N) symmetry can be broken into different irreducible representations which are characterized by an additional parameter $m$. These irreducible representations can be described by Young tableau with $m$ and $(N-m)$ vertical boxes on A- and B-sublattice. In the language of fermions in our case, it means $m$ and $(N-m)$ fermions on two kinds of sublattice, respectively. For simplicity but without loss of generality, we can always use a diagonal matrix \bea \sigma_b=\text{diag}\left[P_+,\cdots,P_+,-P_,\cdots,-P_-\right] \eea to represent the generator where $P_+=P_-^{-1}=\sqrt{(N-m)/m}$, and thus the order parameter is written as \bea \mathcal{N}_i=(-1)^i\left[P_+\sum_{\alpha=1}^m n_{i\alpha}-P_-\sum_{\alpha=m+1}^{N}n_{i\alpha} \right]. \eea where $n_{i\alpha}$ is the fermion number with flavor $\alpha$. 
 
-{\color{red}can we add nearest neighbour V to realize the case with $m\ne N/2$??}
-
-Take $N=4$ as an example, when $m=1$, $\sigma=diag\{3,-1,-1,-1\}$; when $m=2$, $\sigma=diag\{1,1,-1,-1\}$. 
-
-The AF-PM phase transition of the SU(N) Hubbard model can be described by a nonlinear sigma model
-\bea S=\frac{\rho_s}{2}\int \partial_\mu\bn \cdot \partial_\mu\bn \eea
-where $\rho_s$ is the spin stiffness, $\mu$ denotes the space-time indices, and $\bn$ is the normalized Neel moment which can be parametrized by a complex representation \bea n_b=\sum_i z_i^\dag \sigma_b z_i=\mathrm{Tr}(Z^\dag\sigma_b Z) \eea  where $Z$ is a complex $N\times m$ matrix and $\sigma_b (b\le N^2-1)$ denote the SU(N) group generators. In this work, we adopt the normalization condition $\mathrm{tr}(\sigma_b^2)=N$. Then, using the Fierz identity of the $SU(N)$ group
-\bea (\sigma_b)_{\alpha\beta} (\sigma_b)_{\gamma\delta}+\delta_{\alpha\beta}\delta_{\gamma\delta}=N\delta_{\alpha\delta}\delta_{\beta\gamma} \eea
+Near the AF-PM phase transition of the SU(N) Hubbard model, fermionic excitations are gapped out and thus the critical behavior is governed by the nonlinear sigma model
+\bea \label{eq:NLsM}S=\frac{\rho_s}{2}\int \partial_\mu\bn \cdot \partial_\mu\bn \eea
+where $\rho_s$ is the spin stiffness, $\mu$ denotes the space-time indices, $\int$ means integral over spacetime and $\bn$ is the normalized Neel moment $\mathcal{N}$. The action $S$ is directly related to the partition function $Z=\int \me^{-S}$. In this work, we parametrize $\bn$ using the complex representation \bea \label{eq:cprep}n_b=\sum_{i=1}^m z_i^\dag \sigma_b z_i=\mathrm{Tr}(Z^\dag\sigma_b Z) \eea where $z_i$ is an N-flavor boson field and $m$ copies of $z_i$ are put together to form a complex $N\times m$ matrix $Z$. Next, applying the Fierz identity of the $SU(N)$ group
+\bea \label{eq:Fierz} (\sigma_b)_{\alpha\beta} (\sigma_b)_{\gamma\delta}+\delta_{\alpha\beta}\delta_{\gamma\delta}=N\delta_{\alpha\delta}\delta_{\beta\gamma} \eea
 we get
 \bea \bn\cdot\bn = N\mathrm{Tr}(ZZ^\dag Z Z^\dag)-\mathrm{Tr}(ZZ^\dag)^2 \eea
-In order to maintain $\bn\cdot\bn=1$, we require a constraint condition \bea Z^\dag Z=\frac{1}{\sqrt{m(N-m)}}I \label{eq:normalizeZ}\eea
-which tells the $Z$ fields live on the Grassmann manifold $U(N)/U(m)U(N-m)$. 
+In order to maintain $\bn\cdot\bn=1$, we impose a constraint condition \bea Z^\dag Z=\frac{1}{\sqrt{m(N-m)}}I \label{eq:normalizeZ}\eea
+which indicates that the $Z$ field in fact lives on the Grassmann manifold $U(N)/U(m)U(N-m)$. 
 
-Now the nonlinear sigma model becomes
-\bea S=\frac{\rho_s}{2}\int\partial_\mu\bn \cdot \partial_\mu\bn&=&\frac{\rho_s}{2}\int\partial_\mu \mathrm{Tr}(Z^\dagger\sigma_b Z) \partial_\mu \mathrm{Tr}(Z^\dagger \sigma_b Z) \nonumber\\
-&=& N\rho_s \int\mathrm{Tr}\left[-(i\partial_\mu Z^\dagger Z) (-iZ^\dag \partial_\mu Z) + Z^\dag Z (i\partial_\mu Z^\dagger)(-i\partial_\mu Z)\right] \eea 
-After Hubbard-Stratonovich transformation, we get
+Substituting the complex representation Eq.~\ref{eq:cprep} into Eq.~\ref{eq:NLsM} and again applying Fierz identity Eq.~\ref{eq:Fierz}, we have
+\bea S &=& N\rho_s \int\mathrm{Tr}\left[-(i\partial_\mu Z^\dagger Z) (-iZ^\dag \partial_\mu Z) \right. \nonumber\\  &+& \left. Z^\dag Z (i\partial_\mu Z^\dagger)(-i\partial_\mu Z)\right] .\eea
+The first term can be decoupled by introducing a Hubbard-Stratonovich field $\bA$, 
 \bea S=N\rho_s\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] \eea
-The constraint condition Eq.~\eqref{eq:normalizeZ} can be incorporated by a real Lagrangian multiplier matrix $\lambda$, which then brings us to
-\bea \boxed{ S=N\rho_s\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] + i\int\mathrm{Tr}\left\{\lambda\left[Z^\dag Z-\frac{1}{\sqrt{m(N-m)}}I\right]\right\} } \eea
-We can also rescale $Z$ field to another form
-\bea \boxed{ S=\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] + i\int\mathrm{Tr}\left\{\lambda\left[Z^\dag Z-\frac{N\rho_s}{\sqrt{m(N-m)}}I\right]\right\} } \eea
-{\color{red} I prefer to use the second form in the following since the propagators and vertices are as usual. We can also define a new parameter $g$ such that the constraint condition is $Z^\dag Z=(N/g)I$ or $(2N/g)I$ as in different literatures.} Notice the representation $n_b=\mathrm{Tr}(Z^\dag \sigma_b Z)$ has a gauge redundancy, \ie $Z\rightarrow ZU$ (with $U$ a $m\times m$ unitary matrix). Therefore, the gauge field is also non Abelian and can be parametrized as $A_\mu=f^aA_\mu^a$ [$f^a$ are adjoint representation of $SU(m)$ with $0\le a\le m^2-1$].
+Notice here $A_\mu$ is an $m\times m$ matrix and thus resembles a non Abelian gauge field.
+The $Z$ field can be further rescaled to eliminate the prefactor $N\rho_s$, which now appears in the right hand side of the constraint condition Eq.~\ref{eq:normalizeZ}. Using the rescaled field and introducing a real Lagrangian multiplier matrix $\lambda$ to incorporate the constraint condition, we arrive at
+\bea \label{eq:cpNm} S&=&\int \mathrm{Tr}\left[ (i\partial_\mu Z^\dag+A_\mu Z^\dag)(-i\partial_\mu Z+ZA_\mu)  \right] \nonumber \\ &+& i\int \mathrm{Tr}\left\{\lambda\left[Z^\dag Z-\frac{N\rho_s}{\sqrt{m(N-m)}}I\right]\right\} . \eea 
+This model is a direct generalization of the famous CP$^{N-1}$ model \cite{} (special case with $m=1$). Their main change of $m>1$ relative to $m=1$ is: all $Z$, $A$, $\lambda$ fields now become matrices and thus make the model more complex. Such a model was first proposed by MacFarlane \cite{} and latter studied by some other researchers \cite{Hikomi, Duerksen, Read&Sachdev}. However, due to the missing of a real physical system governed by such a model, it received less and less attentions in recent years. In this work, we rediscover and apply it to study the critical behaviors in the AF-PF phase transition in the SU(N) symmetric system. We will only consider the renormalized classical region (keeping only the smallest Matsubara frequency) since it is sufficient to obtain the critical exponents. \cite{IKK}
 
-
-%Integrate over $Z$ and $Z^\dag$, we get
-%\bea S_{\rm eff}=N\mathrm{Tr}\log(G^{-1})-i\frac{N\rho_s}{\sqrt{m(N-m)}}\mathrm{Tr}(\lambda) \label{eq:Seff}\eea
-%where the prefactor $N$ in the first term comes from the sum of the SU(N) index. Now the $\mathrm{Tr}$ means summation over all remaining spaces: $d+1$-spacetime and m-dimensional subspace. The explicit expression of $G^{-1}$ is
-%\bea G^{-1}(ki;k'j)&=&k^2\delta_{kk'}\delta_{ij}+k A_{ji}(k-k')+k' A_{ij}(k-k')+A_{\ell i}(p)A_{j \ell}(k-k'-p) \nonumber\\ &+& i\lambda_{ji}(k-k') \eea
 \section{Large-N limit}
+We first study the large N limit, in which case the saddle point solution becomes exact as a result of the global prefactor $N$ after tracing out the $Z$-field. The saddle point condition $\delta S/\delta bA_\mu$ gives $A_\mu=0$ which means there is no gauge field. While the other saddle point condition $\delta S/\delta \lambda=0$ gives just the constraint condition. In order to describe the ordered phase, we assume 
+\bea Z_{\alpha i}=z_0\delta_{\alpha i}+z_{\alpha i}. \eea 
+where $\alpha\le N$ and $i\le m$. The first term means condensation occurs when $z_0\ne0$ with a remaining SU(m) symmetry and the second term describes fluctuations. Now the constraint condition becomes
+\bea z_0^2 + NT\int \frac{1}{k^2} = \frac{N\rho_s}{\sqrt{m(N-m)}} \eea
+It is interesting to note that $z_0^2$ scaled to $N$ which is a direct consequence of the rescaling operation before Eq.~\ref{eq:cpNm}. 
+
+The anomalous dimension $\eta_z$ of the $Z$ field can be obtained from $G_z(k)\sim k^{\eta-2}$ at $T=T_c$. Since $G_z(k)=k^{-2}$, we get $\eta_z=0$. 
+
+
+The longitudinal magnetic susceptibility is
+\bea \chi_{bb}(q) &=& m(N-m) z_0^4\delta_{q0} + (N-m)\frac{z_0^2}{q^2} \nonumber\\ 
+&+& mNT\int \frac{1}{k^2(k+q)^2} \eea
+
+
+
+
+\begin{itemize}
+	\item $G(k)\sim k^{\eta-2}$ at $T=T_c$: $g(k)=k^{-2}$ gives $\eta_z=0$, while $\chi(q)\sim q^{d-4}$ gives $\eta_n=d-2$.
+	\item $M\sim t^\beta$ (where $t=(T_c-T)/Tc$) below $T_c$: $M=\sqrt{m}z_0^2\sim t$ gives $\beta=1$.
+	\item $\gamma$ can be obtained from $g^{-1}(k=0)$ (zero frequency) and $\nu$ can be obtained from $\xi$ (equal time correlation).
+	\item In the conventional theory of critical phenomena, there is only one correlation length $\xi$, and thus all physical quantities share the same $\nu$. Such a situation may change, \textit{e.g.} in the deconfined quantum critical phenomena. What about tri-critical point?
+\end{itemize}
 
 \section{1/N expansion}
 
