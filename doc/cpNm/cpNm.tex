@@ -65,7 +65,11 @@
 
 \section{Model}
 % from Hubbard model to SU(N)-AF representations, non linear sigma model and then derive the CP model
-The Neel order parameter of the SU(N) Hubbard model is described by $N_r=(-1)^r\langle \Psi_r^\dagger \sigma_b \Psi_r\rangle$. Take $N=4$ as an example, when $m=1$, $\sigma=diag\{3,-1,-1,-1\}$; when $m=2$, $\sigma=diag\{1,1,-1,-1\}$. 
+The Neel order parameter of the SU(N) Hubbard model is defined by $S_i=(-1)^i\langle \Psi_i^\dagger \sigma_b \Psi_i\rangle$ where $\Psi_i$ is an N-flavor fermion field and $\sigma_b$ ($1\le b\le N^2-1$) denote the SU(N) group generators with normalization condition $\mathrm{tr}(\sigma_b^2)=N$ in this work. All these $N^2-1$ branches of AF fluctuations degenerate in normal state while they are allowed to break into different kinds of ordered states corresponding to different representations.
+
+{\color{red}can we add nearest neighbour V to realize the case with $m\ne N/2$??}
+
+Take $N=4$ as an example, when $m=1$, $\sigma=diag\{3,-1,-1,-1\}$; when $m=2$, $\sigma=diag\{1,1,-1,-1\}$. 
 
 The AF-PM phase transition of the SU(N) Hubbard model can be described by a nonlinear sigma model
 \bea S=\frac{\rho_s}{2}\int \partial_\mu\bn \cdot \partial_\mu\bn \eea
@@ -98,10 +102,9 @@ We can also rescale $Z$ field to another form
 
 \section{Summary}
 
-\begin{acknowledge}
-  We thank Katanin, Irkhin, and xxx.
-  This work is supported by NSFC (Nos. xxxx and yyyy).
-\end{acknowledge}
+\section{acknowledgement}
+We thank Katanin, Irkhin, and xxx. This work is supported by NSFC (Nos. xxxx and yyyy).
+
 
 \bibliography{cpNm}
 \end{document}
