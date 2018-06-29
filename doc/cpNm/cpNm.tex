@@ -38,6 +38,7 @@
 \newcommand{\bomega}{\boldsymbol{\omega}}
 \newcommand{\md}{\mathrm{d}}
 \newcommand{\ie}{\textit{i.e.{ }}}
+\newcommand{\eg}{\textit{e.g.{ }}}
 \newcommand{\etc}{\textit{etc.{ }}}
 \newcommand{\ddt}{\frac{\md}{\md t}}
 \newcommand{\ddtt}{\frac{\md^2}{\md t^2}}
@@ -53,15 +54,21 @@
 \affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
 \author{Da Wang}\email{dawang@nju.edu.cn}
 \affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+\author{Congjun Wu}\email{cjwu@physics.ucsd.edu}
+\affiliation{UCSD}
 \author{Qiang-Hua Wang}\email{qhwang@nju.edu.cn}
 \affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
-\affiliation{another address}
+\affiliation{Collaborative Innovation Center of Advanced Microstructures, Nanjing University, Nanjing 210093, China}
 \begin{abstract}
   Motivated by the numerical evidence of a continuous phase transition between Neel and paramagnetic phases in the SU(N) Hubbbard model, we studied its low energy nonlinear sigma model defined on Grassman manifold $U(N)/U(m)U(N-m)$ using the complex projective presentation, which is a direct generalization of the widely studied CP$^{N-1}$ model (corresponding to $m=1$). In space-time dimension $2<d<4$, to the first order of $1/N$, we calculate the critical exponents of the Neel moment, which are all functions of $m/N$ indicating that larger $m$ effectively reduces $N$ and thus brings stronger fluctuations around the $N=\infty$ fixed point. 
 \end{abstract}
 \maketitle
 
 \section{Introduction}
+% SU(N)-spin symmetry breaking: dependence of m
+% physical realization: cold atom fermionic system
+% universality class, CP^{N-1} model
+Spin is a fundamental property of elementary particles inherbted from the spatial SO(3) symmetry. For a single electron, there are only three indepedent spin directions corresponding to three SO(3) or SU(2) generators. In solids, different electrons can be combined by Hund's rule to form larger spins as different representations of the SO(3) or SU(2) group. If all other degrees of freedom (\eg charge) are frozen, the system is said to be described by an effective spin model, \eg the famous Heisenberg model. Due to the lacking of small parameters, the spin-$1/2$ Heisenberg model is difficult to solve by perturbations. In such a backgound, people introduced the SU(N) spin such that $1/N$ can now be taken as a perturbation parameter. One important consequence of the larger SU(N) group is it has more ($N^2-1$) independent spin directions (generators), which can be broken into different kinds of magnetic ordered states. Taking antiferromagnetic order as an example, the spin in A-sublattice is represented by an $m$ rows and $n_c$ columns Yougn tableau, while the spin in B-sublattice belong to its conjugate representation, \ie $N-m$ rows and $n_c$ columns. In recent years, the SU(N) Heisenberg model and its variations have been extensively studied theoretically mainly focusing on the case of $m=1$. On the other hand, such an SU(N) spin system can now be simulated in cold atom experiments since the carriers in an optical lattice is not electrons but atoms with larger hyperfine nuclear spins spanning the internal space. 
 
 \section{Model}
 % from Hubbard model to SU(N)-AF representations, non linear sigma model and then derive the CP model
@@ -69,7 +76,7 @@ The Neel order parameter of the SU(N) Hubbard model is defined by \bea \mathcal{
 
 Near the AF-PM phase transition of the SU(N) Hubbard model, fermionic excitations are gapped out and thus the critical behavior is governed by the nonlinear sigma model
 \bea \label{eq:NLsM}S=\frac{\rho_s}{2}\int \partial_\mu\bn \cdot \partial_\mu\bn \eea
-where $\rho_s$ is the spin stiffness, $\mu$ denotes the space-time indices, $\int$ means integral over spacetime and $\bn$ is the normalized Neel moment $\mathcal{N}$. The action $S$ is directly related to the partition function $Z=\int \me^{-S}$. In this work, we parametrize $\bn$ using the complex representation \bea \label{eq:cprep}n_b=\sum_{i=1}^m z_i^\dag \sigma_b z_i=\mathrm{Tr}(Z^\dag\sigma_b Z) \eea where $z_i$ is an N-flavor boson field and $m$ copies of $z_i$ are put together to form a complex $N\times m$ matrix $Z$. Next, applying the Fierz identity of the $SU(N)$ group
+where $\rho_s$ is the spin stiffness, $\mu$ denotes the space-time indices, $\int$ means integral over space dimensions and $\bn$ is the normalized Neel moment $\mathcal{N}$. The action $S$ is directly related to the partition function $Z=\int \me^{-S}$. In this work, we parametrize $\bn$ using the complex representation \bea \label{eq:cprep}n_b=\sum_{i=1}^m z_i^\dag \sigma_b z_i=\mathrm{Tr}(Z^\dag\sigma_b Z) \eea where $z_i$ is an N-flavor boson field and $m$ copies of $z_i$ are put together to form a complex $N\times m$ matrix $Z$. Next, applying the Fierz identity of the $SU(N)$ group
 \bea \label{eq:Fierz} (\sigma_b)_{\alpha\beta} (\sigma_b)_{\gamma\delta}+\delta_{\alpha\beta}\delta_{\gamma\delta}=N\delta_{\alpha\delta}\delta_{\beta\gamma} \eea
 we get
 \bea \bn\cdot\bn = N\mathrm{Tr}(ZZ^\dag Z Z^\dag)-\mathrm{Tr}(ZZ^\dag)^2 \eea
@@ -89,29 +96,52 @@ This model is a direct generalization of the famous CP$^{N-1}$ model \cite{} (sp
 We first study the large N limit, in which case the saddle point solution becomes exact as a result of the global prefactor $N$ after tracing out the $Z$-field. The saddle point condition $\delta S/\delta bA_\mu$ gives $A_\mu=0$ which means there is no gauge field. While the other saddle point condition $\delta S/\delta \lambda=0$ gives just the constraint condition. In order to describe the ordered phase, we assume 
 \bea Z_{\alpha i}=z_0\delta_{\alpha i}+z_{\alpha i}. \eea 
 where $\alpha\le N$ and $i\le m$. The first term means condensation occurs when $z_0\ne0$ with a remaining SU(m) symmetry and the second term describes fluctuations. Now the constraint condition becomes
-\bea z_0^2 + NT\int \frac{1}{k^2} = \frac{N\rho_s}{\sqrt{m(N-m)}} \eea
+\bea \label{eq:Ninfty} z_0^2 + NT\int \frac{1}{k^2} = \frac{N\rho_s}{\sqrt{m(N-m)}} \eea
 It is interesting to note that $z_0^2$ scaled to $N$ which is a direct consequence of the rescaling operation before Eq.~\ref{eq:cpNm}. 
 
-The anomalous dimension $\eta_z$ of the $Z$ field can be obtained from $G_z(k)\sim k^{\eta-2}$ at $T=T_c$. Since $G_z(k)=k^{-2}$, we get $\eta_z=0$. 
+We first examine the critical exponents of the $Z$ field. At $T=T_c$, $z_0=0$ and $G_z(k)=k^{-2}$ which gives $\eta_z=0$ by definition $G_z(k)\sim k^{\eta-2}$. The exponent $\gamma_z$ is related to the uniform static susceptibility, or equivalently $G_z(k=0)$ above $T_c$. In this case, a mass term $\Delta$ should be added to retain the constraint condition, \ie $G_z(k)=(k^2+\Delta)^{-1}$. Then from Eq.~\ref{eq:Ninfty}, we get $\Delta\propto t^{2/(d-2)}$ where $t=(T-T_c)/T_c$. Comparing with the definition $G_z(k=0)\sim t^{-\gamma_z}$, we obtain $\gamma_z=2/(d-2)$. From $\eta_z$ and $\gamma_z$, all other exponents of the $Z$ fields can be obtained from scaling relations. In particular, $\nu_z=1/(d-2)$ which should be independent on specified fields and thus we can drop its subscript $z$, \ie $\nu=1/(d-2)$. (See the conclusion section for more discussions about this.)
 
+Next, let us focus on the magnetic moment as a particle-hole composition of the $Z$ field. The order parameter $M$ is determined by the condensed $Z$ field by definition, \ie $M=mP_+z_0^2$. From Eq.~\ref{eq:Ninfty} by setting $T<T_c$ and $T=T_c$, we have $z_0^2\propto t$ and thus $M\propto t$. As a result, the exponent $\beta_n=1$ by comparing with the definition $M\propto t^{\beta_n}$. Then, together with $\nu=1/(d-2)$ obtained from above, all remaining exponents are ready, \eg $\eta_n=d-2$ and $\gamma_n=(4-d)/(d-2)$. 
 
-The longitudinal magnetic susceptibility is
-\bea \chi_{bb}(q) &=& m(N-m) z_0^4\delta_{q0} + (N-m)\frac{z_0^2}{q^2} \nonumber\\ 
-&+& mNT\int \frac{1}{k^2(k+q)^2} \eea
-
-
-
-
-\begin{itemize}
-	\item $G(k)\sim k^{\eta-2}$ at $T=T_c$: $g(k)=k^{-2}$ gives $\eta_z=0$, while $\chi(q)\sim q^{d-4}$ gives $\eta_n=d-2$.
-	\item $M\sim t^\beta$ (where $t=(T_c-T)/Tc$) below $T_c$: $M=\sqrt{m}z_0^2\sim t$ gives $\beta=1$.
-	\item $\gamma$ can be obtained from $g^{-1}(k=0)$ (zero frequency) and $\nu$ can be obtained from $\xi$ (equal time correlation).
-	\item In the conventional theory of critical phenomena, there is only one correlation length $\xi$, and thus all physical quantities share the same $\nu$. Such a situation may change, \textit{e.g.} in the deconfined quantum critical phenomena. What about tri-critical point?
-\end{itemize}
 
 \section{1/N expansion}
+Next, let us go beyond the saddle point approximation by performing a $1/N$ expansion calculation. Our strategy mainly follows the work by IKK1996 which only considered the case with $m=1$. Up to $1/N$ order, both $i\lambda$ and $A$ fields acquire dynamics from their vacuum polarizations,
+\bea \Pi_{ij}^\lambda(q)&=&2z_0^2\frac{1}{q^2} + NT\int_k \frac{1}{k^2(k+q)^2} \nonumber\\ &=&\frac{2z_0^2}{q^2}+\frac{TNK_dA_d}{q^{4-d}} \equiv \Pi_\lambda(q) \eea 
+and 
+\bea \Pi_{ij}^{\mu\nu}(q) &=& 2z_0^2 \frac{q_\mu q_\nu}{q^2} + NT\int \frac{(2k_\mu+q_\mu)(2k_\nu+q_\nu)}{k^2(k+q)^2} \nonumber\\ && - 2z_0^2 \delta_{\mu\nu} -2NT\int \frac{1}{k^2}\delta_{\mu\nu}  \nonumber\\ &=&\left(2z_0^2+\frac{TNK_dA_d}{d-1} q^{d-2}\right)\left(\frac{q_\mu q_\nu}{q^2}-\delta_{\mu\nu}\right) \nonumber\\
+&\equiv& \Pi_A(q)\left(\frac{q_\mu q_\nu}{q^2}-\delta_{\mu\nu}\right) \eea
+where 
+\bea K_d^{-1}=2^{d-1}\pi^{d/2}\Gamma\left(\frac{d}{2}\right) \eea
+and
+\bea A_d=\frac{\Gamma(d-2)\Gamma(2-d/2)\Gamma^2(d/2-1)}{2\Gamma(d-2)} \eea
+One good property is that both $\Pi_{ij}^\lambda(q)$ and $\Pi_{ij}^{\mu\nu}(q)$ show no dependence on their subscript $ij$ and even $m$, which will greatly simplify the following calculations. From the vacuum polarizations, we get their propagators $D_\lambda(q)=-\Pi_\lambda^{-1}$ and
+$D_A^{\mu\nu}(q)=-\Pi_A^{-1}\left(\frac{q_\mu q_\nu}{q^2}-\delta_{\mu\nu}\right)$ under the Landau gauge. {\color{red} @WSY: if you like, you can add the gauge fixing parameter $\xi$ explicitly.}
 
-\section{Summary}
+The self energy of the $z$ field is $\Sigma=\Sigma_\lambda+\Sigma_A$ where
+\bea \Sigma_\lambda(k)=-mT\int_q \left[\frac{1}{(k+q)^2}-\frac{1}{q^2}\right]\Pi_\lambda^{-1}(q) \eea
+and
+\bea \Sigma_A(k) &=& mT\int_q \frac{1}{(k+q)^2} D_A^{\mu\nu}(q) (2k_\mu+q_\mu) (2k_\nu+q_\nu) \nonumber \\&=& 4mT\int_q \frac{1}{(k+q)^2}\Pi_A^{-1}\left[ k^2-\frac{(k\cdot q)^2}{q^2} \right] \eea
+After completing the bubble integrals, and extracting the coefficient of the $k^2\ln k$ term, (see details in Appendix) we immediately get $\eta_z=-\frac{(4d-7)m}{NA_d}$, which was first obtained by Hikami(1980). However, his calculation was based on single particle propagators and thus can only gave the critical exponents of the $Z$ field. On the other hand, here, we are more interested in the critical exponents of the physical field $\bn$. To this end, we have to consider the correlation functions of $\bn$, which is a two-particle propagator. Keeping only the uniform term (q=0), the susceptibility of $\bn$ is
+\bea \chi_0=m^2P_+^2 z_0^4\left[ 1-  2mT\int_k \frac{\Pi_\lambda^{-1}}{k^4} + 4 \left.\frac{\Sigma(k)}{k^2}\right|_{k\rightarrow0} \right] \eea
+which gives the magnetic moment square $M^2$ as a function $z_0$. In order to get $\beta_n$, we still need the relation between $z_0$ and $t$, which can be obtained from the constraint condition up to order of $1/N$,
+\bea &&z_0^2 \left[ 1-  mT\int_k \frac{\Pi_\lambda^{-1}}{k^4} + 2 \left.\frac{\Sigma(k)}{k^2}\right|_{k\rightarrow0}\right] + NT\int_k \frac{1}{k^2} \nonumber\\&&+ NT\int_k \frac{\Sigma(k)}{k^4} = \frac{N\rho_s}{\sqrt{m(N-m)}} \eea 
+After some lengthy but straightforward algebra (see details in Appendix), we get 
+\bea \beta_n=1-\frac{2m(d^2-d+2)}{NA_d} \eea
+Taking together with the correlation length exponent $\nu=\nu_z$ which had already obtained by Hikami(1980)
+\bea \nu=\frac{1}{d-2}\left[ 1-\frac{2md(d-1)}{NA_d} \right] \eea
+we get the remaining critical exponents,
+\bea \eta_n=(d-2)\left[1-\frac{8m}{NA_d}\right] \eea
+and
+\bea \gamma_n=\frac{4-d}{d-2}\left[ 1+\frac{8m(d-2)}{(4-d)NA_d}-\frac{2md(d-1)}{NA_d} \right] \eea
+Although the calculation is somewhat tedious, the result is quite clear: we only need replace $1/N$ to $m/N$ comparing with the CP$^{N-1}$ model \cite{IKK1996}. Hence, larger $m$ may spoil the first order perturbation results of $1/N$ expansion. Higher order calculations are in need to obtain more relevant results. 
+
+
+\section{Conclusion and discussion}
+In the conventional theory of critical phenomena, there is only one correlation length $\xi$, and thus all physical quantities share the same $\nu$. Such a situation may change, \textit{e.g.} in the deconfined quantum critical phenomena.
+
+
+
+{\color{red} The bad news is: we should take $m/N$ as a small parameter to valid the $1/N$-expansion calculation. Therefore, the method cannot be applied to our interested case with $m=N/2$. Anyway, let us keep going on and just take this work as a generalization of the $m=1$ theory.}
 
 \section{acknowledgement}
 We thank Katanin, Irkhin, and xxx. This work is supported by NSFC (Nos. xxxx and yyyy).
