@@ -50,7 +50,7 @@
 
 \begin{document}
 
-\title{Multi-partite entanglement among corner states in two dimensional second order topological insulators}
+\title{Multipartite entanglement among corner states in two dimensional second order topological insulators}
 \author{Qiang Wang}
 \affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
 \author{Da Wang}\email{dawang@nju.edu.cn}
@@ -58,48 +58,83 @@
 \author{Qiang-Hua Wang}\email{qhwang@nju.edu.cn}
 \affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
 \affiliation{Collaborative Innovation Center of Advanced Microstructures, Nanjing University, Nanjing 210093, China}
+
 \begin{abstract}
   In a $d$ dimensional topological insulator of order $d$, there are zero energy states on its corners.
-  When the system size is not too large, these corner states are coupled together by long range interactions among them. 
+  When the system size is finite, these corner states are coupled together by long range hybridizations among them 
+  forming a fully entanged multipartite state. In this work, we propose a scheme to calculate the multipartite
+  entanglement entropy on a square lattice, which is well described by a four-point toy model and thus can further 
+  identify the high order topological insulator.
 \end{abstract}
 \maketitle
 \section{Introduction}
-%
-%
+% close relation between entanglement and topological insulators
+% high order topo, corner states, nested entanglement spectrum, corner contribution
+% area law, topological entanglement entropy of long range entanglement, our scheme
+Entanglement and topological states have close relationship, which is extensively studied in recent years.
+\cite{Zeng2015,Laflorencie2017}
+In general, a nontrivial entanglement structure, \eg degeneracy of the many body entanglement spectra (ES) or gapless
+mode of the single particle ES, always indicates a nontrivial topological state, and vice versa.
+\cite{Ryu2006, Fidkowski2010}
+The key point is the entanglement boundary in some sense mimics the physical boundary which further reflects the
+topological property via the bulk boundary correspondence, \ie a $d$ dimensional topological insulator with gapless
+states on its $d-1$ dimensional boundaries. 
+%although they may differ in special cases. 
+Furthermore, on a fnite size topological insulator with open boundary condition, its zero energy boundary states are
+coupled together by long range hybridizations and thus also contribute to the total entanglement entropy, 
+which can be used to identify the topological degeneracy induced by boundaries. \cite{Wang2015}
+
+Very recently, high order topological insulators are theoretically predicted and observed in experiments.
+\cite{}
+Different from conventional topological insulators, the gapless boundary states exist on the $d-n$ dimensional
+boundaries for a $n$-th order topological insulator. In special, when $n=d$, the gapless boundary states only exist on
+the corners. The usual bipartite entanglement spectra can not be directly applied to identify the high order 
+topological insulators unless the entanglement boundary has non-smooth corners, called nested entanglement spectra
+proposed by xxx.\cite{}
+In this work, we focus on the case with open boundary condition, in which case the corner states are coupled together by
+long range hybridizations among them to form a multipartite entangled state. We propose a scheme to extract the 
+multipartite entanglement entropy from the calculations on the whole lattice. We obtain a universal value of the 
+quadripartite entanglement entropy which is well described by a toy model with only four sites and and thus directly 
+identify the existence of the gapless corner states. 
+
 
 
 \section{Model}
 
 \section{Multi-partite entanglement entropy}
+
 \section{Toy model}
-
+In this section, we use a toy model including only four corner states to explain the numerically obtained universal
+value of the quadripartite entanglement entropy. Soving the four-point tight binding model with only nearest hopping
+together with a small flux (to break the degeneracy), its two occupied states are obtained
 \begin{eqnarray}
-  |\Psi_1\rangle&=&|1\rangle-|2\rangle+|3\rangle-|4\rangle=\sum_i \mathrm{e}^{i\theta_1}|i\rangle \\
-  |\Psi_2\rangle&=&|1\rangle-i|2\rangle-|3\rangle+i|4\rangle=\sum_i \mathrm{e}^{i\theta_2}|i\rangle 
+  |\Psi_1\rangle&=&\frac12\left(|1\rangle-|2\rangle+|3\rangle-|4\rangle\right) \\
+  |\Psi_2\rangle&=&\frac12\left(|1\rangle-i|2\rangle-|3\rangle+i|4\rangle\right) 
 \end{eqnarray}
-where $\theta_1=\pi$ and $\theta_2=\pi/2$. 
-The total ground state is then given by $\Psi\rangle=|\Psi_1\rangle \times |\Psi_2\rangle$. 
-
+The total ground state is then given by $\Psi\rangle=|\Psi_1\rangle \times |\Psi_2\rangle$, which is a fully entangled
+quadripartite state in space\footnote{In Fork space, it is a direct product state as a result of the non interacting
+property}. Then the eigenvalues of the reduced correlation matrices can be easily solved out as
 \begin{eqnarray}
-  \lambda_{12}=\lambda_{14}\left[\frac{1}{2}+\frac{\sqrt{2}}{4},\frac{1}{2}-\frac{\sqrt{2}}{4}\right]
+  \lambda_{12}=\lambda_{14}=\left\{\frac{1}{2}+\frac{\sqrt{2}}{4},\frac{1}{2}-\frac{\sqrt{2}}{4}\right\}
 \end{eqnarray}
-
+and
 \begin{eqnarray}
-  \lambda_{13}=\left[\frac{1}{2},\frac{1}{2}\right]
+  \lambda_{13}=\left\{\frac{1}{2},\frac{1}{2}\right\}
 \end{eqnarray}
-
+which gives the quadripartite entanglement entropy
+\begin{eqnarray}
+  \Delta S= 4\ln2-\sqrt{2}\ln\frac{2+\sqrt{2}}{2-\sqrt{2}}=0.2797
+\end{eqnarray}
+The value is exactly the same as what we obtained in numerics by subtracting the result of $L_y\gg L_x$ 
+from the square case with $L_y=L_x$ as $Lx\rightarrow\infty$. 
+In contrast, in the toy model by setting $L_x\rightarrow\infty$, \ie cutting off the hoppings between sites $14$ and
+$23$. Then, the gound state is a product state
 \begin{eqnarray}
   |\Psi\rangle=|\Psi_{14}\rangle \times |\Psi_{23}\rangle
 \end{eqnarray}
-
-\begin{eqnarray}
-  \lambda_{12}=[0,1]
-\end{eqnarray}
-
-\begin{eqnarray}
-  \lambda_{13}=\lambda_{14}=\left[\frac{1}{2},\frac{1}{2}\right]
-\end{eqnarray}
-\bibliography{bibfile}
+which gives $\Delta S=0$ clearly. Comparing with the numerical results on full lattice, it becomes clear that the
+nonzero $\Delta S$ must come from the contribution from bulk states near the non-smooth corners of the entanglement 
+boundary \cite{Laflorencie2016} similar to the nested entanglement spectrum\cite{Schindler2017}. 
 
 \section{Conclusion and discussion}
 

@@ -6,6 +6,7 @@ endif
 if has('gui_running')
   set guioptions=aiA
   set guifont=Consolas:h12
+  set termguicolors
 endif
 
 set autoindent            "indent scheme: cindent, smartindent,...
@@ -23,14 +24,16 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'lervag/vimtex'
   Plug 'altercation/vim-colors-solarized'
+  "Plug 'arakashic/nvim-colors-solarized'
   Plug 'morhetz/gruvbox'
+  Plug 'nightsense/snow'
+  Plug 'andreypopp/vim-colors-plain'
   Plug 'Yggdroot/indentLine'
-  Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
 " external pdf viewer used by vimtex
-            let g:vimtex_view_general_viewer = 'SumatraPDF'
+            let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
             let g:vimtex_view_general_options
                 \ = '-reuse-instance -forward-search @tex @line @pdf'
                 \ . ' -inverse-search "gvim --servername ' . v:servername
@@ -40,7 +43,6 @@ call plug#end()
                 \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
                 \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
 
-set termguicolors
 syntax enable
 "colorscheme desert "default,desert,pablo,ron,solarized,torte,...
 set background=dark
@@ -54,5 +56,5 @@ set foldlevelstart=99
 
 set textwidth=120
 set colorcolumn=121
-set statusline=%l\ %v
+set statusline=%l,\ %v
 set laststatus=2
