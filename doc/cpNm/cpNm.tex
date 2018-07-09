@@ -51,15 +51,15 @@
 %===============================================
 \begin{document}
 \title{Critical exponents of nonlinear sigma model on Grassmann manifold $U(N)/U(m)U(N-m)$ by $1/N$ expansion}
-\author{Shan-Yue Wang}
-\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
-\author{Da Wang}\email{dawang@nju.edu.cn}
-\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+%\author{Shan-Yue Wang}
+%\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+%\author{Da Wang}\email{dawang@nju.edu.cn}
+%\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
 %\author{Congjun Wu}\email{cjwu@physics.ucsd.edu}
 %\affiliation{UCSD}
-\author{Qiang-Hua Wang}\email{qhwang@nju.edu.cn}
-\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
-\affiliation{Collaborative Innovation Center of Advanced Microstructures, Nanjing University, Nanjing 210093, China}
+%\author{Qiang-Hua Wang}\email{qhwang@nju.edu.cn}
+%\affiliation{National Laboratory of Solid State Microstructures $\&$ School of Physics, Nanjing University, Nanjing, 210093, China}
+%\affiliation{Collaborative Innovation Center of Advanced Microstructures, Nanjing University, Nanjing 210093, China}
 \begin{abstract}
   Motivated by the numerical evidence of a continuous phase transition between antiferromagnetic and paramagnetic phases
   in the SU(N) Hubbbard model, we studied its low energy nonlinear sigma model defined on Grassman manifold
@@ -71,11 +71,11 @@
 \end{abstract}
 \maketitle
 
-to be added: \\
-1. show large-N limit is a saddle point \\
-2. change $t$ to $|t|$ if $t<0$ \\
-3. outlook, e.g. RG \\
-4. 
+%to be added: \\
+%1. show large-N limit is a saddle point \\
+%2. change $t$ to $|t|$ if $t<0$ \\
+%3. outlook, e.g. RG \\
+%4. change sigma_b to sigma_m for clarity
 
 \section{Introduction}
 % SU(N)-spin symmetry breaking: dependence of m physical realization: cold atom fermionic system and QMC results
@@ -129,7 +129,7 @@ $\mathrm{tr}(\sigma_b^2)=N$ during this work. In the normal state all these $N^2
 degenerate indicating the SU(N) symmetry. While in the AF state, the SU(N) symmetry can be broken into different
 irreducible representations which are characterized by $m$: there are $m$ and $(N-m)$ fermions on two kinds of
 sublattice, respectively. For simplicity but without loss of generality, we can always use a diagonal matrix \bea
-\sigma_b=\text{diag}\left[P_+,\cdots,P_+,-P_,\cdots,-P_-\right] \eea to represent the ordered direction where
+\sigma_m=\text{diag}\left[P_+,\cdots,P_+,-P_,\cdots,-P_-\right] \eea to represent the ordered direction where
 $P_+=P_-^{-1}=\sqrt{(N-m)/m}$, and thus the AF order parameter is simply given by \bea
 \mathcal{N}_i=(-1)^i\left[P_+\sum_{\alpha=1}^m n_{i\alpha}-P_-\sum_{\alpha=m+1}^{N}n_{i\alpha} \right]. \eea where
 $n_{i\alpha}$ is the fermion occupation number. 
@@ -195,7 +195,7 @@ $\gamma_n=(4-d)/(d-2)$.
 
 \section{1/N expansion}
 \begin{figure}
-\includegraphics[width=0.2\textwidth]{self.eps}
+\includegraphics[width=0.5\textwidth]{1-N.png} %self.eps}
 \caption{\label{fig:self}}
 \end{figure}
 Next, let us go
@@ -215,14 +215,14 @@ simplify the following calculations. From the vacuum polarizations, we get their
 $D_\lambda(q)=-\Pi_\lambda^{-1}$ and $D_A^{\mu\nu}(q)=-\Pi_A^{-1}\left(\frac{q_\mu q_\nu}{q^2}-\delta_{\mu\nu}\right)$
 under the Landau gauge. {\color{red} @WSY: if you like, you can add the gauge fixing parameter $\xi$ explicitly.}
 
-\begin{figure}
-\includegraphics[width=0.2\textwidth]{suscept.eps}
-\caption{\label{fig:suscept}}
-\end{figure}
-\begin{figure}
-\includegraphics[width=0.2\textwidth]{constraint.eps}
-\caption{\label{fig:constraint}}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=0.2\textwidth]{suscept.eps}
+%\caption{\label{fig:suscept}}
+%\end{figure}
+%\begin{figure}
+%\includegraphics[width=0.2\textwidth]{constraint.eps}
+%\caption{\label{fig:constraint}}
+%\end{figure}
 The self energy of the $Z$ field shown in Fig.~\ref{fig:self} is $\Sigma=\Sigma_\lambda+\Sigma_A$ where \bea
 \Sigma_\lambda(k)=-mT\int_q \left[\frac{1}{(k+q)^2}-\frac{1}{q^2}\right]\Pi_\lambda^{-1}(q) \eea and \bea \Sigma_A(k)
 &=& mT\int_q \frac{1}{(k+q)^2} D_A^{\mu\nu}(q) (2k_\mu+q_\mu) (2k_\nu+q_\nu) \nonumber \\&=& 4mT\int_q
