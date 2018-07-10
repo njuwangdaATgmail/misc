@@ -856,20 +856,19 @@
      <void property="amp">
       <int>15</int>
      </void>
-     <void id="JaxoDefaultArrow1" property="arrow">
+     <void property="arrow">
       <void property="arrowLength">
        <float>20.0</float>
       </void>
       <void property="arrowWidth">
        <float>8.0</float>
       </void>
-      <void id="Color1" property="color"/>
      </void>
      <void property="arrowPosition">
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -936,7 +935,7 @@
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -1003,7 +1002,7 @@
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -1058,20 +1057,19 @@
      <void property="amp">
       <int>10</int>
      </void>
-     <void id="JaxoDefaultArrow2" property="arrow">
+     <void property="arrow">
       <void property="arrowLength">
        <float>7.386364</float>
       </void>
       <void property="arrowWidth">
        <float>2.9545455</float>
       </void>
-      <void id="Color2" property="color"/>
      </void>
      <void property="arrowPosition">
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color2"/>
+      <object idref="Color0"/>
      </void>
      <void property="doubleLine">
       <boolean>true</boolean>
@@ -1160,7 +1158,7 @@
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -1215,20 +1213,19 @@
      <void property="amp">
       <int>15</int>
      </void>
-     <void id="JaxoDefaultArrow3" property="arrow">
+     <void property="arrow">
       <void property="arrowLength">
        <float>7.386364</float>
       </void>
       <void property="arrowWidth">
        <float>2.9545455</float>
       </void>
-      <void id="Color3" property="color"/>
      </void>
      <void property="arrowPosition">
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color3"/>
+      <object idref="Color0"/>
      </void>
      <void property="dash">
       <float>10.0</float>
@@ -1314,7 +1311,7 @@
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -1381,7 +1378,7 @@
       <float>0.5</float>
      </void>
      <void property="color">
-      <object idref="Color1"/>
+      <object idref="Color0"/>
      </void>
      <void property="paintArrow">
       <boolean>true</boolean>
@@ -2216,14 +2213,14 @@
         <string>x</string>
         <void method="set">
          <object idref="Point74"/>
-         <int>24</int>
+         <int>32</int>
         </void>
        </void>
        <void class="java.awt.Point" method="getField">
         <string>y</string>
         <void method="set">
          <object idref="Point74"/>
-         <int>24</int>
+         <int>48</int>
         </void>
        </void>
       </void>
@@ -2259,14 +2256,14 @@
         <string>x</string>
         <void method="set">
          <object idref="Point75"/>
-         <int>24</int>
+         <int>32</int>
         </void>
        </void>
        <void class="java.awt.Point" method="getField">
         <string>y</string>
         <void method="set">
          <object idref="Point75"/>
-         <int>168</int>
+         <int>176</int>
         </void>
        </void>
       </void>
@@ -2302,14 +2299,14 @@
         <string>x</string>
         <void method="set">
          <object idref="Point76"/>
-         <int>48</int>
+         <int>32</int>
         </void>
        </void>
        <void class="java.awt.Point" method="getField">
         <string>y</string>
         <void method="set">
          <object idref="Point76"/>
-         <int>504</int>
+         <int>512</int>
         </void>
        </void>
       </void>
