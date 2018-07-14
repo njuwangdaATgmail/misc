@@ -1,7 +1,7 @@
-function [S,u,v,f1,f2,f3,f4,f5]=soti(Lx,Ly)
+function [S,u,v,f1,f2,f3,f4,f5]=soti(Lx,Ly,xbc,ybc)
 
-xbc=1;
-ybc=1;
+%xbc=1;
+%ybc=1;
 m=1;
 lam=1;
 del=0.5;
@@ -61,13 +61,13 @@ C=(C+C')/2;
 %end
 
 %
-sub1=1:N/2;  % suppose N Ly is even
+sub1=1:N/2;  % suppose Ly is even
 sub2=[];
 sub3=[];
 sub4=[];  % for another shape
 sub5=[];
 for y=1:Ly
-    sub2=[sub2,(1:floor(Lx/2)*2)+(y-1)*Lx*4]; % suppose Lx is even
+    sub2=[sub2,(1:floor(Lx/2)*4)+(y-1)*Lx*4]; % suppose Lx is even
     if y<=Ly/2
         sub3=[sub3,(1:Lx*2)+(y-1)*Lx*4];  % suppose Lx and Ly are even
     else
@@ -89,12 +89,12 @@ for y=1:Ly
     if y<(Ly+1)/2
         x1=ceil((Lx+1)/2-(y-1)/2);
         x2=floor((Lx+1)/2+(y-1)/2);
-        plot(x1:x2,y*ones(1,x2-x1+1),'o');hold on
+        %plot(x1:x2,y*ones(1,x2-x1+1),'o');hold on
         sub5=[sub5,(x1*4-3:x2*4)+(y-1)*Lx*4];
     else
         x1=ceil((Lx+1)/2-(Ly-y)/2);
         x2=floor((Lx+1)/2+(Ly-y)/2);
-        plot(x1:x2,y*ones(1,x2-x1+1),'o');hold on
+        %plot(x1:x2,y*ones(1,x2-x1+1),'o');hold on
         sub5=[sub5,(x1*4-3:x2*4)+(y-1)*Lx*4];
     end
            

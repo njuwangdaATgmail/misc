@@ -49,7 +49,7 @@ input_*
 
 # Data files
 *.dat
-*.mat
+#*.mat
 *.dat*
 
 # others
