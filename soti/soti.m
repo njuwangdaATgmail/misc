@@ -7,14 +7,12 @@ lam=1;
 del=0.5;
 t=1;
 
-z0=zeros(2);s0=eye(2);s1=[0,1;1,0];s2=[0,-1i;1i,0];s3=[1,0;0,-1]; %#ok<*NASGU>
+z0=zeros(2);s0=eye(2);s1=[0,1;1,0];s2=[0,-1i;1i,0];s3=[1,0;0,-1];
 tzs0=[s0,z0;z0,-s0];
 txsx=[z0,s1;s1,z0];
 txsy=[z0,s2;s2,z0];
 tys0=[z0,-1i*s0;1i*s0,z0];
 
-%Lx=32;
-%Ly=24;
 N=Lx*Ly*4;
 h=zeros(N);
 
