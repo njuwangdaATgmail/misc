@@ -1,4 +1,4 @@
-function [E,y]=soti_ky(Lx,Ly,xbc)
+function [E,f1]=soti_ky(Lx,Ly,xbc)
 
 m=1;
 lam=1;
@@ -12,12 +12,12 @@ txsy=[z0,s2;s2,z0];
 tys0=[z0,-1i*s0;1i*s0,z0];
 
 N=Lx*4;
-E=zeros(N,Ly);
-f1=zeros(N/2,Ly);
-for y=1:Ly
-    ky=2*pi*y/Ly;
-    cosky=cos(ky)
-    sinky=sin(ky)
+E=zeros(N,Ly+1);
+f1=zeros(N/2,Ly+1);
+for y=1:Ly+1
+    ky=2*pi*(y-1)/Ly;
+    cosky=cos(ky);
+    sinky=sin(ky);
 
     h=zeros(N);
 

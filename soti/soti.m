@@ -1,4 +1,4 @@
-function [S,u,v,f1,f2,f3,f4,f5]=soti(Lx,Ly,xbc,ybc)
+function [S,u,v,f1,f2,f3,f3half,f4,f5]=soti(Lx,Ly,xbc,ybc)
 
 %xbc=1;
 %ybc=1;
@@ -62,14 +62,16 @@ C=(C+C')/2;
 sub1=1:N/2;  % suppose Ly is even
 sub2=[];
 sub3=[];
+sub3half=[];
 sub4=[];  % for another shape
 sub5=[];
 for y=1:Ly
     sub2=[sub2,(1:floor(Lx/2)*4)+(y-1)*Lx*4]; % suppose Lx is even
     if y<=Ly/2
         sub3=[sub3,(1:Lx*2)+(y-1)*Lx*4];  % suppose Lx and Ly are even
+        sub3half=[sub3half,(1:Lx*2)+(y-1)*Lx*4];  % suppose Lx and Ly are even
     else
-        %sub3=[sub3,(Lx*2+1:Lx*4)+(y-1)*Lx*4];  % suppose Lx and Ly are even
+        sub3=[sub3,(Lx*2+1:Lx*4)+(y-1)*Lx*4];  % suppose Lx and Ly are even
     end
     if y<(Ly+1)/2  % suppose Ly is odd
         % (Lx+1)/2-(y-1)<=x<=(Lx+1)/2+(y-1)
@@ -101,11 +103,13 @@ end
 f1=eig(C(sub1,sub1));
 f2=eig(C(sub2,sub2));
 f3=eig(C(sub3,sub3));
+f3half=eig(C(sub3half,sub3half));
 f4=eig(C(sub4,sub4));
 f5=eig(C(sub5,sub5));
 
-S = -sum(f1.*log(f1+1e-10)+(1-f1).*log(1-f1+1e-10)) ...
-    -sum(f2.*log(f2+1e-10)+(1-f2).*log(1-f2+1e-10))...
-    +sum(f3.*log(f3+1e-10)+(1-f3).*log(1-f3+1e-10));
+S = [-sum(f1.*log(f1+1e-10)+(1-f1).*log(1-f1+1e-10)); ...
+    -sum(f2.*log(f2+1e-10)+(1-f2).*log(1-f2+1e-10)); ...
+    -sum(f3.*log(f3+1e-10)+(1-f3).*log(1-f3+1e-10))];
+
 end
         

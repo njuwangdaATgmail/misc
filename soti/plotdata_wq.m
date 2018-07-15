@@ -1,31 +1,31 @@
-% % fig3
-% load soti;
-% subplot(2,1,1);
-% plot(A,oS,'b:')
-% hold on
-% plot(A,oS,'*m')
-% hold off
-% text(20,0.75,'\DeltaS=S(AB)+S(AD)-S(AC)','fontsize',15)
-% text(33,0.64,'Universal','color','red','fontsize',15)
-% text(33,0.54,'value','color','red','fontsize',15)
-% text(33,0.44,'0.2797','color','red','fontsize',15)
-% % annotattext('arrow',[0.5,0.37],[0.5,0.64])
-% ylim([0.3,0.8])
-% hold off
-% xlabel('L_y')
-% ylabel('\DeltaS')
-% title('(a)','fontsize',15);
-% 
-% subplot(2,1,2);
-% pcolor(10:2:32,10:2:32,oS)
-% shading interp
-% colorbar
-% xlabel('L_x')
-% ylabel('L_y')
-% title('(b)','fontsize',15);
+% fig3
+load soti;
+subplot(2,1,1);
+plot(A,oS,'b:')
+hold on
+plot(A,oS,'*m')
+hold off
+text(20,0.75,'\DeltaS=S(AB)+S(AD)-S(AC)','fontsize',15)
+text(33,0.64,'Universal','color','red','fontsize',15)
+text(33,0.54,'value','color','red','fontsize',15)
+text(33,0.44,'0.2797','color','red','fontsize',15)
+% annotattext('arrow',[0.5,0.37],[0.5,0.64])
+ylim([0.3,0.8])
+hold off
+xlabel('L_y')
+ylabel('\DeltaS')
+title('(a)','fontsize',15);
+
+subplot(2,1,2);
+pcolor(10:2:32,10:2:32,oS)
+shading interp
+colorbar
+xlabel('L_x')
+ylabel('L_y')
+title('(b)','fontsize',15);
 
 
-
+figure;
 % fig2
 m1=[0,2,2,0,0];m2=[0,0,2,2,0];m3=[0,2];m4=[1,1];
 subplot(2,1,1);
