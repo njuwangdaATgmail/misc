@@ -1,4 +1,4 @@
-function [S,u,v,f1,f2,f3,f3half,f4,f5]=soti(Lx,Ly,xbc,ybc)
+function [S,u,v,f1,f2,f3,f3half,f4,f5,sub4,h]=soti(Lx,Ly,xbc,ybc)
 
 %xbc=1;
 %ybc=1;
