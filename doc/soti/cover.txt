@@ -1,0 +1,16 @@
+Dear Editor,
+
+Topological insulator (TI) is extensively studied in the past decade. Since the last year, one of its cousin, called higher order topological insulator (HOTI) was proposed  theoretically and observed in experiments. It is a direct generalization of the usual TI and has gapless states on its (d-n)-dimensional boundaries for a n-th order HOTI. 
+
+In our work, we studied it from the entanglement point of view. Two kinds of schemes are proposed to identify such a HOTI: one is bipartite entanglement spectra and the other is from the multipartite long range entanglement among its corner states. 
+
+We hope the Editor would consider our manuscript as a research article in PRB. 
+
+Thanks,
+
+Best regards,
+
+Qiang, Da and Qiang-Hua
+
+
+
