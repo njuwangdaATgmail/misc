@@ -58,3 +58,4 @@ set textwidth=120
 set colorcolumn=121
 set statusline=%l,\ %v
 set laststatus=2
+autocmd FileType tex setlocal spell spelllang=en_us
