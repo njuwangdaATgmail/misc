@@ -1,0 +1,18 @@
+Dear Editor,
+
+Thank you for considering our manuscript. We would like to submit our manuscript as a regular article in PRB.
+
+This manuscript is about the critical exponents of a generalized CP^{N-1} model, called $U(N)/U(m)U(N-m)$ model. It describes the continuous phase transition of an SU(N) antiferromaget, which has been observed in recent quantum Monte carlo (QMC) simulations. 
+
+In this work, we first derive the CP representative $U(N)/U(m)U(N-m)$ model from the SU(N) represented non-linear sigma model. Then, applying the $1/N$ expansion technique, we calculate its critical exponents of the magnetic moment. To the best of our knowledge, it's the first time to obtain these critical exponents analytically. Finally, these values are discussed and compared with QMC results.
+
+We hope the Editor would consider our manuscript as a regular article in PRB. 
+
+Thanks,
+
+Best regards,
+
+Shan-Yue, Da and Qiang-Hua
+
+
+
