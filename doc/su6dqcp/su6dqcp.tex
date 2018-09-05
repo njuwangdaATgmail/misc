@@ -9,17 +9,20 @@
 
 % Continuous transition between Slater and Mott insulators in SU(6) Hubbard model on square lattice
 % Slater and Mott insulators in the SU(6) Hubbard model
+% Near the QCP, AF decreases but single particle gap increases, indicating a Mott physics because in Slater AF, the
+% single particle gap should be proportional to AF moment. 
+% However, is there a phase transition from Slater-AF to Mott-AF or just a crossover? Any way to distinguish them?
 % continuous transition and critical exponents
 % discussion about deconfined QCP
 
 %===============================================
 \begin{document}
-\title{Signatures of Deconfined Quantum Criticality in Half-Filled SU(6) Hubbard Model on a Square Lattice}
-\author{Da Wang} \email{dawang@nju.edu.cn}
+\title{Transition from Slater to Mott insulators in Half-Filled SU(6) Hubbard Model on a Square Lattice}
+\author{Da Wang} %\email{dawang@nju.edu.cn}
 \affiliation{National Laboratory of Solid State Microstructures and School of Physics, Nanjing University, Nanjing 210093, China}
-\author{Lei Wang} \email{wanglei@iphy.ac.cn}
+\author{Lei Wang} %\email{wanglei@iphy.ac.cn}
 \affiliation{Beijing National Lab for Condensed Matter Physics and Institute of Physics, Chinese Academy of Sciences, Beijing 100190, China}
-\author{Congjun Wu} \email{cjwu@physics.ucsd.edu}
+\author{Congjun Wu} %\email{cjwu@physics.ucsd.edu}
 \affiliation{Department of Physics, University of California, San Diego, California 92093, USA}
 \begin{abstract}
   The quantum phase transition between antiferromagnetism (AF) and valence bond solid (VBS) can be continuous due to the deconfined spinons at the quantum critical point (QCP). In this work, we report our numerical evidence of the continuous AF-VBS phase transition in half-filled SU(6) fermionic Hubbard model on a square lattice through quantum Monte Carlo simulations. The QCP $U_c=13.3(2)$ is determined by finite size scalings of structure factors and AF correlation lengths. Moreover, smooth energy evolution and emergent U(1) symmetry are observed strongly supporting the deconfined QCP as well. The anomalous dimensions $\eta_{\rm AF}=0.44(3)$ and $\eta_{\rm VBS}=0.98(2)$ are much larger than the SU(2) case and also differ from the fundamental representation described by the non compact CP$^{5}$ model. Here, the QCP belongs to the self-conjugate representation of the SU(6) spin and should be governed by a $U(6)/[U(3)\otimes U(3)]$ nonlinear sigma model calling for more elaborated theoretical investigations. 
@@ -42,6 +45,7 @@ groups\cite{Lou2009,Kaul2012a,Kaul2012,Block2013,D'Emidio2016,D'Emidio2017}. One
 %\end{figure}
 %
 
+
 When talking about SU(N) AF and VBS, we need first to specify their meanings. Mathematically, an SU(N) spin can be
 represented by a Young tableau with $p$ rows and $n_c$ columns of boxes, each of which can be filled with one of N
 values. \cite{Affleck1985,Read1989b,*Read1989a,*Read1990} The extensively studied case in literature
@@ -58,6 +62,7 @@ In fact, the self-conjugate represented AF/VBS can readily exist in the half-fil
 %  \includegraphics[width=0.5\textwidth]{spinon}
 %  \caption{\label{fig:spinon}Vortex of Z4 VBS. For both columnar and plaquette VBSs, the vortex is a three-fermion state. In low energy theory with charge excitation forbidden, the vortex is constructed by three spinons. Therefore, there are $C_6^3=20$ kinds of vortices altogether.}
 %\end{figure}
+
 
 
 \section{model and QMC simulations}
@@ -94,6 +99,10 @@ with the largest value $1/2$ the same as SU(2) case. The AF moment is the Fourie
 	\caption{\label{fig:correlationlength_af} AF correlation length $\xi_{\rm AF}$. (a)$\xi_{\rm AF}/L$ versus $U$ shows a crossing point at $U_c=13.32$. (b)Data collapse of $\xi_{\rm AF}/L$ as a universal function of $(U-U_c)L^{1/\nu}$ with $\nu=0.60(2)$.}
 \end{figure}
 
+\begin{figure}
+    \includegraphics[width=0.5\textwidth]{etaexponent}
+    \caption{\label{fig:etaexponent}Anomalous dimensions. We plot structure factors $\langle m^2 \rangle$ and $\langle d^2 \rangle$ versus $L$ near the critical point, respectively, using log-log plots. Dashed lines are linear fittings. From their slopes we obtain anomalous dimensions $\eta_{\rm AF}=0.44(3)$ and $\eta_{\rm VBS}=0.98(1)$ after taking the dynamical exponent $z=1$. }
+\end{figure}
 
 In parallel to AF, to describe VBS, we define
 \begin{eqnarray}
@@ -131,7 +140,7 @@ where the correlation length exponent $\nu$ is determined to be $0.60(2)$. The o
 
 
 \begin{figure}
-  \includegraphics[width=0.53\textwidth]{structurefactor} \\
+  %\includegraphics[width=0.53\textwidth]{structurefactor} \\
   \includegraphics[width=0.53\textwidth]{extrapolation}
   \caption{\label{fig:structurefactor}Structure factors. We plot structure factors of AF and VBS versus $U$ in (a) and (b), respectively. While in (c) and (d), finite size extrapolations versus $1/L$ are performed using Eq.~\ref{eq:extrapolation_magic}.}
   %For AF, no convergence is achieved up to $L=24$, indicating long correlation length $\xi_{\rm AF}$. But for VBS, the structure factor converges as $L$ increases for $U\lesssim13$, indicating much shorter correlation length $\xi_{\rm VBS}$. On the other hand, for $U\gtrsim13.25$, the data of different sizes show clear separation, corresponding to a tendency of long range order.}
@@ -142,16 +151,16 @@ Next, let us check structure factors. Supposing a two-point correlation function
 \end{eqnarray}
 as long as $L\gg\xi$. As a result, as $L$ increases $L^2\langle m^2 \rangle$ saturates to a fixed value $a\xi^2$ in disordering phase while diverges in the ordering phase. From the raw data of AF and VBS structure factors as functions of $U$ shown in Fig.~\ref{fig:structurefactor}(a,b), we get the information that $\xi_{\rm AF}\gg\xi_{\rm VBS}$. The VBS curves begin to separate around $U\approx13.25$ indicating the onset of the VBS long range order, while the AF data show almost no significant change because of the large $\xi_{\rm AF}$. Therefore, we resort to finite size extrapolation to extract their thermodynamic values. 
 
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{phasediagram}
+    \caption{\label{fig:phasediagram}Phase diagram. The extrapolation values of $\langle m^2 \rangle$ and $\langle d^2 \rangle$ are plotted together. The error bars are determined by the $95\%$ confidence bounds of the finite size data fittings. The large error bars near the critical point mainly come from our extrapolation method which contains four fitting parameters but the number of data points is limited by lattice size $L\le24$. The dashed line indicates the phase transition point $U_c=13.32$ which is obtained from the data crossing of $\xi_{\rm AF}/L$ vs $U$ as shown in Fig.~\ref{fig:correlationlength_af}(a).}
+\end{figure}
 
 %\begin{figure}
 %  \includegraphics[width=0.53\textwidth]{extrapolation}
 %  \caption{\label{fig:extrapolation}Finite size scalings. We plot fittings of $\langle m^2 \rangle$ (a) and $\langle d^2 \rangle$ (b) as functions of $1/L$ . The power law polynominal with a subleading correction $y(x)=y_0+a/(L^2+bL^\omega)$  is used to fit the QMC data.}
 %\end{figure}
 
-\begin{figure}
-  \includegraphics[width=0.4\textwidth]{phasediagram}
-  \caption{\label{fig:phasediagram}Phase diagram. The extrapolation values of $\langle m^2 \rangle$ and $\langle d^2 \rangle$ are plotted together. The error bars are determined by the $95\%$ confidence bounds of the finite size data fittings. The large error bars near the critical point mainly come from our extrapolation method which contains four fitting parameters but the number of data points is limited by lattice size $L\le24$. The dashed line indicates the phase transition point $U_c=13.32$ which is obtained from the data crossing of $\xi_{\rm AF}/L$ vs $U$ as shown in Fig.~\ref{fig:correlationlength_af}(a).}
-\end{figure}
 
 Generally speaking, finite size extrapolation is not an easy task, especially when the system size $L$ is not large enough. However, in our case, we have found Eq.~\ref{eq:extrapolation} together with a subleading correction \cite{Sandvik2010a} i.e.
 \begin{eqnarray}\label{eq:extrapolation_magic}
@@ -168,15 +177,12 @@ In Fig.~\ref{fig:structurefactor}(c,d) we plot several representative fitting re
 
 Another signature of the continuous phase transition comes from the energy per site $E$ versus $U$ as shown in Fig.~\ref{fig:energydoublon}(a) and also double occupation $\langle n_\alpha n_\beta \rangle$ ($\alpha\ne\beta$) which corresponds to the energy derivative $\partial E/\partial U$ in Fig.~\ref{fig:energydoublon}(b). Both $E$ and its derivative show convergence with size $L$ without any singularity strongly confirming the continuous phase transition. From the large value of double occupation, we recognize that $U$ in our simulations is not large enough such that charge fluctuation is not totally forbidden but is quite strong. This is a fundamental difference between our fermionic model and extensively studied spin models in literature.
 
-\begin{figure}
-	\includegraphics[width=0.5\textwidth]{energydoublon}
-	\caption{\label{fig:energydoublon}Energy and double occupation. In (a), we plot energy per site $E$ versus $U$ for $L=8$, $16$ and $24$, respectively. The data show a convergence without any singularity. In (b), we also plot double occupation $\langle n_\alpha n_\beta \rangle$, which gives the energy derivative $\partial E/\partial U$ and shows no singularity as well.}
-\end{figure}
+%\begin{figure}
+%	\includegraphics[width=0.5\textwidth]{energydoublon}
+%	\caption{\label{fig:energydoublon}Energy and double occupation. In (a), we plot energy per site $E$ versus $U$ for $L=8$, $16$ and $24$, respectively. The data show a convergence without any singularity. In (b), we also plot double occupation $\langle n_\alpha n_\beta \rangle$, which gives the energy derivative $\partial E/\partial U$ and shows no singularity as well.}
+%\end{figure}
 
-\begin{figure}
-  \includegraphics[width=0.5\textwidth]{etaexponent}
-  \caption{\label{fig:etaexponent}Anomalous dimensions. We plot structure factors $\langle m^2 \rangle$ and $\langle d^2 \rangle$ versus $L$ near the critical point, respectively, using log-log plots. Dashed lines are linear fittings. From their slopes we obtain anomalous dimensions $\eta_{\rm AF}=0.44(3)$ and $\eta_{\rm VBS}=0.98(1)$ after taking the dynamical exponent $z=1$. }
-\end{figure}
+
 
 %\begin{figure}
 %  \includegraphics[width=0.53\textwidth]{datacrossing}
@@ -213,10 +219,10 @@ Next, when we tried to plot $L^{z+\eta_{\rm AF}}\langle m^2 \rangle$ and $L^{z+\
 %\subsection{emergent U(1) symmetry of VBS}
 
 
-\begin{figure}
-  \includegraphics[width=0.4\textwidth]{histogram_vbs}
-  \caption{\label{fig:histogram_vbs}QMC histogram of the argument of VBS order parameter $(d_x+id_y)$. }
-\end{figure}
+%\begin{figure}
+%  \includegraphics[width=0.4\textwidth]{histogram_vbs}
+%  \caption{\label{fig:histogram_vbs}QMC histogram of the argument of VBS order parameter $(d_x+id_y)$. }
+%\end{figure}
 
 According to deconfined quantum criticality, the VBS order parameter changes its symmetry from $Z_4$ to U(1) as approaching the QCP. \cite{Senthil2004,*Senthil2004a,*Levin2004} In order to check this emergent U(1) symmetry, we measured the histogram of VBS configurations during QMC samplings. \cite{Sandvik2007} For each QMC configuration, we obtain a data point $(d_x,d_y)$. Plotting the histogram of $\mathrm{arg}(d_x+id_y)$, we obtain Fig.~\ref{fig:histogram_vbs}. For $U=24$ and $L=24$ which is deep inside the VBS phase, a significant $Z_4$ feature is observed corresponding to the columnar VBS. When we go approaching the critical point by reducing $U$ or $L$, the $Z_4$ feature becomes weaker as a result of stronger fluctuations, in consistent with an emergent U(1) symmetry at the deconfined QCP. 
 
