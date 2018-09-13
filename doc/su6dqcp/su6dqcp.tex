@@ -7,13 +7,6 @@
 \usepackage{mathtools}
 \usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
-% Continuous transition between Slater and Mott insulators in SU(6) Hubbard model on square lattice
-% Slater and Mott insulators in the SU(6) Hubbard model
-% Near the QCP, AF decreases but single particle gap increases, indicating a Mott physics because in Slater AF, the
-% single particle gap should be proportional to AF moment. 
-% However, is there a phase transition from Slater-AF to Mott-AF or just a crossover? Any way to distinguish them?
-% continuous transition and critical exponents
-% discussion about deconfined QCP
 
 %===============================================
 \begin{document}
@@ -25,11 +18,18 @@
 \author{Congjun Wu} %\email{cjwu@physics.ucsd.edu}
 \affiliation{Department of Physics, University of California, San Diego, California 92093, USA}
 \begin{abstract}
-  The quantum phase transition between antiferromagnetism (AF) and valence bond solid (VBS) can be continuous due to the deconfined spinons at the quantum critical point (QCP). In this work, we report our numerical evidence of the continuous AF-VBS phase transition in half-filled SU(6) fermionic Hubbard model on a square lattice through quantum Monte Carlo simulations. The QCP $U_c=13.3(2)$ is determined by finite size scalings of structure factors and AF correlation lengths. Moreover, smooth energy evolution and emergent U(1) symmetry are observed strongly supporting the deconfined QCP as well. The anomalous dimensions $\eta_{\rm AF}=0.44(3)$ and $\eta_{\rm VBS}=0.98(2)$ are much larger than the SU(2) case and also differ from the fundamental representation described by the non compact CP$^{5}$ model. Here, the QCP belongs to the self-conjugate representation of the SU(6) spin and should be governed by a $U(6)/[U(3)\otimes U(3)]$ nonlinear sigma model calling for more elaborated theoretical investigations. 
+    Single particle gap of an insulator can arise from either symmetry breaking or interactions, called Slater and Mott insulator, respectively. In this work, we use projector quantum Monte Carlo method to investigate the half-filled SU(6) Hubbard model on the square lattice, in which the transition from antiferromagnetic (AF) order to valence bond solid (VBS) order has been previously observed. Here, by tracing the single particle gap, we find a strong evidence of the crossover from Slater to Mott AF insulators as $U$ increases. By further increasing $U$, the Mott AF state goes to the Mott VBS state crossing a quantum phase transition which seems to be a continuous and thus maybe a deconfined critical point governed by a $U(6)/[U(3)\otimes U(3)]$ nonlinear sigma model calling for more elaborated theoretical investigations. 
 \end{abstract}
 \maketitle
 
 \section{introduction}
+For a partially filled electron band, the single particle gap can be opened by either symmetry breaking or interactions, called Slater and Mott insulators, respectively. For the Slater insulator, the single particle gap $\Delta_c$ depends on the order parameter. While for the Mott insulator, $\Delta_c$ is roughly proportional to the interaction value and requires no symmetry breaking. However, in a strongly correlated electron system, such two pictures usually blend together. For example, in the half-filled Hubbard model on the square lattice, fermi surface nesting leads to Slater antiferromagnetic (AF) state for weak $U$, while the strong $U$ side is effectively described by the Heisenberg model and is attributed to the Mott AF insulator. Since there is no more symmetry breaking between the Slater and Mott AF insulators, they are only connected by a crossover. In contrast, in the SU(6) Hubbard model, which is already able to realize in ultracold atom experiments, two of the users have observed a clear transition from the AF state at weak $U$ to the valence bond solid (VBS) state at strong $U$ via quantum Monte Carlo simulations. The weak $U$ AF is a result of the fermi surface nesting and Van Hove singularity, while the strong $U$ VBS is a consequence of the Mott physics. How such a Slater to Mott transition occurs is an interesting theoretical question, which is the main aim of this work.
+
+On the other hand, the quantum phase transition from AF to VBS is predicted to be a continuous one as a result of the deconfined spinons beyond the Landau-Ginzburg-Wilson paradigm. Such a prediction has been supported by some numerical simulations. But there are also other works claiming the first order phase transition and thus violating the prediction. As a result, whether the AF to VBS phase transition is a continuous one seems to be model dependent. Another aim of this work is to find out whether the AF to VBS transition in our case [the SU(6) Hubbard model] is a continuous one, which, if yes, may provide a simple experimental setup to observe the deconfined critical theory. 
+
+%Todo: discuss the distinction between our model and CP^N
+
+
 Topological excitations play important roles in modern physics, especially in low dimensions. The deconfinement of vortices in two dimensional XY-model causes the Berezinskii-Kosterlitz-Thouless phase transition. \cite{Kosterlitz1973} While in 2+1 dimensional antiferromagnetic (AF) Heisenberg model, the topological excitations dubbed as hedgehogs can become deconfined and lead the AF phase to a paramagnetic phase by their condensation. \cite{Haldane1988a} Such a magnetic disordering phase can also break lattice symmetry, known as spin-Peierls or valence-bond-solid (VBS) state. \cite{Read1989b,*Read1989a,*Read1990} According to Landau-Ginzburg-Wilson theory, the AF-VBS phase transition should be of first order because they break different symmetries. But from the viewpoint of topological excitations, i.e. hedgehogs in AF and vortices in VBS, the AF-VBS transition is proposed to be a continuous one named as deconfined quantum criticality due to the deconfined topological excitations at the quantum critical point (QCP). \cite{Senthil2004,*Senthil2004a,*Levin2004} The deconfined QCP was first proposed on a non-compact CP$^1$ model and later received much attention in recent years. By many efforts, it has been confirmed numerically on some designer models such as J-Q \cite{Sandvik2007,Melko2008,Sandvik2010,Pujari2013,Shao2016}, classical loop \cite{Nahum2015}, J$_1$-J$_2$ \cite{Wang2016d} and gauged fermionic \cite{Assaad2016} models. But there are also some other models \cite{Kragset2006,Kuklov2006,Sen2010,Papanikolaou2010} (even including the non compact CP$^1$ model itself\cite{Kuklov2008}) which are found to be of first order and thus may not be deconfined QCPs. 
 
 The studies have also been extended to higher symmetries, e.g. SO(N)\cite{Kaul2015} and SU(N)
@@ -141,7 +141,7 @@ where the correlation length exponent $\nu$ is determined to be $0.60(2)$. The o
 
 \begin{figure}
   %\includegraphics[width=0.53\textwidth]{structurefactor} \\
-  \includegraphics[width=0.53\textwidth]{extrapolation}
+  \includegraphics[width=0.5\textwidth]{extrapolation}
   \caption{\label{fig:structurefactor}Structure factors. We plot structure factors of AF and VBS versus $U$ in (a) and (b), respectively. While in (c) and (d), finite size extrapolations versus $1/L$ are performed using Eq.~\ref{eq:extrapolation_magic}.}
   %For AF, no convergence is achieved up to $L=24$, indicating long correlation length $\xi_{\rm AF}$. But for VBS, the structure factor converges as $L$ increases for $U\lesssim13$, indicating much shorter correlation length $\xi_{\rm VBS}$. On the other hand, for $U\gtrsim13.25$, the data of different sizes show clear separation, corresponding to a tendency of long range order.}
 \end{figure}
@@ -166,6 +166,18 @@ Generally speaking, finite size extrapolation is not an easy task, especially wh
 \begin{eqnarray}\label{eq:extrapolation_magic}
   \langle m^2 \rangle=M^2+\frac{a}{L^2+bL^\omega}
 \end{eqnarray}
+
+\begin{eqnarray}\label{eq:extrapolation_magic}
+\langle m \rangle=M+\frac{a}{L^2+bL^\omega}
+\end{eqnarray}
+works when $M\ne0$
+while
+\begin{eqnarray}\label{eq:extrapolation_magic}
+\langle m \rangle=\frac{a}{L+bL^\omega}
+\end{eqnarray}
+works in disordered phase.
+
+
 works astonishingly well. Here, $M^2$, $a$, $b$ and $\omega$ are fitting parameters determined by a standard non-linear least square method. 
 %The weight $w_i$ of a given data $x_i$ is determined by its QMC error bar $w=1/\Delta x_i^2$. 
 In Fig.~\ref{fig:structurefactor}(c,d) we plot several representative fitting results with data of $L\ge8$. From the extrapolation values, we find $\langle m^2 \rangle$ decreases and finally vanishes as $U$ increases while $\langle d^2\rangle$ shows the opposite behavior. We collect all extrapolation values and put them together to obtain the phase diagram as shown in Fig.~\ref{fig:phasediagram}. From the phase diagram, we see a clear AF-VBS phase transition which seems like a continuous or weakly first order one.
