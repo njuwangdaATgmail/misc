@@ -1,7 +1,7 @@
 %function[G,self,chi,T11,wn_array,vn_array,k_array]=ppflex(g3,g4,T,Nw,Nk)
 %g3=2;g4=1;T=0.1;
 
-mixing=1;
+mixing=0.01;
 %Nw=200;
 %Nk=40;
 tself=0.01;
@@ -22,20 +22,20 @@ selfnew=G;
 chi=zeros(length(vn_array),length(k_array));
 T11=chi;
 
-   for iw=1:length(wn_array)
-        for ik=1:length(k_array)
-            %self(iw,ik)=1i*wn_array(iw)-ek(ik)-1/(1/(1i*wn_array(iw)-g3/2)+1/(1i*wn_array(iw)+g3/2));
-            self(iw,ik)=tself/(1i*wn_array(iw)-eself)+tself/(1i*wn_array(iw)+eself);
-        end
-   end
-self=self*0;
-
+if(self_init==1)
+    self=self0;
+else
+    for iw=1:length(wn_array)
+         for ik=1:length(k_array)
+             self(iw,ik)=1i*wn_array(iw)-ek(ik)-1/(1/(1i*wn_array(iw)-g3/2)+1/(1i*wn_array(iw)+g3/2));
+             %self(iw,ik)=tself/(1i*wn_array(iw)-eself)+tself/(1i*wn_array(iw)+eself);
+         end
+    end
+    self=self*0;
+end
 error=1;
 iter=0;
 while error>1e-4
-    if iter>=1
-        break
-    end
     iter=iter+1;
 
     % get G
