@@ -1,7 +1,7 @@
 %function[G,self,chi,T11,wn_array,vn_array,k_array]=ppflex(g3,g4,T,Nw,Nk)
 %g3=2;g4=1;T=0.1;
 
-mixing=0.05;
+mixing=1;
 %Nw=200;
 %Nk=40;
 tself=0.01;
@@ -33,7 +33,9 @@ self=self*0;
 error=1;
 iter=0;
 while error>1e-4
-    
+    if iter>=1
+        break
+    end
     iter=iter+1;
 
     % get G
