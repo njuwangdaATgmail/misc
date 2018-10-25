@@ -1,8 +1,8 @@
-0.65       :T
+0.6       :T
 1.0       :umklapp
-48        :Nw
+64        :Nw
 1000      :Niter_BS
 100       :Niter_parquet
 1d-6      :eps
-1       :mixing
-1       :outputlevel
+0.2       :mixing
+0       :outputlevel
