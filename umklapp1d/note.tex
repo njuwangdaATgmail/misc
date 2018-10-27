@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -64,13 +64,14 @@ We are seeking a diagrammatic treatment of the two-points umklapp model.
 %=================================================
 The model is defined as
 \bea H=gR_\uparrow^\dag R_\downarrow^\dag L_\downarrow L_\uparrow + h.c. \eea
-whose partition function is
+
+The partition function is
 \bea Z&=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int{ \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma -g(\bar{R}_\uparrow \bar{R}_\downarrow L_\downarrow L_\uparrow + h.c.)} }} \\
 &=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int {\bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +g(\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow)(R_\downarrow R_\uparrow-L_\downarrow L_\uparrow) - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow}}}  \\
 &=&\int{ \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow }}} \\
 &=&\int \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \sum_k \frac{(-g)^k}{k!} \int \md^k\tau \mathcal{T}_\tau (\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow +\bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow)^k \nonumber\\ 
 &&  \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  }} \\
-&\rightarrow&\int \mathcal{D}\phi\sum_k\frac{(-g)^k}{k!}\int \md^k\tau\mathcal{T}_\tau(\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{\mathrm{Tr}\log(\partial_\tau+\hat{\phi})+\mathrm{Tr}\log(\partial_\tau-\hat{\phi})+\bar{\eta}(\partial_\tau+\hat{\phi})\eta+\bar{\xi}(\partial_\tau-\hat{\phi})\xi-\frac1g\phi^*\phi} \\
+&\rightarrow&\int \mathcal{D}\phi\sum_k\frac{(-g)^k}{k!}\int \md^k\tau\mathcal{T}_\tau(\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \nonumber\\&& \me^{\mathrm{Tr}\log(\partial_\tau+\hat{\phi})+\mathrm{Tr}\log(\partial_\tau-\hat{\phi})+\bar{\eta}(\partial_\tau+\hat{\phi})^{-1}\eta+\bar{\xi}(\partial_\tau-\hat{\phi})^{-1}\xi-\frac1g\phi^*\phi} \\
 &=& \int \mathcal{D}\phi \sum_k \frac{(-g)^k}{k!}\int \md^k\tau \mathcal{T}_\tau (\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{S[\phi,\eta,\xi]} \eea
 where we have introduced the source $\eta$ and $\xi$ coupled to $R$ and $L$, respectively.
 The exact Green's function $G_R$ is given by
@@ -79,14 +80,27 @@ The exact Green's function $G_R$ is given by
 \eea
 Clearly, if without $\phi$, the closed diagrams can be canceled. But when $\phi$ exists, we cannot do such a simplification unless $|\phi|$ is pinned at a fixed value like in $T=\infty$ and $T=0$ limits. The former is just the usual diagrammatic expansion while the latter is the mean field theory. 
 
-Next, let us seek an (semi-)analytical treatment. A useful approximation is $\phi(\tau)=\phi$, \ie time independent. ({\color{red}How to justify this?}) Then, $\int \mathcal{D}\phi\rightarrow\int\md\phi$ and
+Next, let us seek an (semi-)analytical treatment. Let's first try the approximation of $\phi(\tau)=\phi$, \ie time independent. Then, $\int \mathcal{D}\phi\rightarrow\int\md\phi$ and
 \bea S(\phi)=2\log(1+\me^{-\beta|\phi|})+2\log(1+\me^{\beta|\phi|})-\frac{\beta|\phi|^2}{g} \eea  
 
 A second approximation is to truncate $k$ with a upper bound $N_k$. When $N_k=0$, we have omitted all closed diagrams, \ie $\sum[{\rm closed}]=1$. Then, we have
 \bea G_R=\left. \int\md \phi \frac{1}{2}\left(\frac{1}{i\omega_n-|\phi|}+\frac{1}{i\omega_n+|\phi|}\right) \me^{S(\phi)}  \middle/ \int\md  \phi \me^{S(\phi)}\right. \eea
 
+Next, let's set $N_k=1$. However, the result becomes worse. The reason may be the approximation of uniform $|\phi(\tau)|$ which is severely broken in the middle temperature regime.  
+\begin{figure}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{uniformphi.eps}
+    \caption{Approximation of time-independent $\phi$.}
+    \end{center}
+\end{figure}
 
-Next, let's set $N_k=1$.
+When $\phi$ depends on $\tau$, or equivalent $i\nu_n$, the bare Green's function depends on two frequencies and can be written as
+\bea G_{0R}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')-\phi(i\omega_n-i\omega_n')\sigma_+-\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
+and
+\bea G_{0L}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')+\phi(i\omega_n-i\omega_n')\sigma_++\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
+Similarly, the self energy (with a fixed $\phi$) should also depends on two frequencies.
+
+
 
 \bibliography{bibfile}
 %\begin{thebibliography}{99}
