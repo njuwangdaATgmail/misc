@@ -1,5 +1,5 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[12pt]{article}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -51,38 +51,40 @@
 
 %===============================================
 \begin{document}
-\title{Template}
+\title{Two-points umklapp model}
 \author{Da Wang}%\thanks{dawang@nju.edu.cn} \\ \\National Laboratory of Solid State Microstructures $\&$ School of Physics, \\ Nanjing University, Nanjing, 210093, China}
-%\date{}
+\date{}
 \maketitle
 
-%\begin{abstract}
-%Here is the abstract.
-%\end{abstract}
+\begin{abstract}
+We are seeking a diagrammatic treatment of the two-points umklapp model.
+\end{abstract}
 
 %\tableofcontents
 %=================================================
-
-\bea H=gR_\uparrow^\dag R_\downarrow^\dag L_\downarrow L_\uparrow + h.c. \eea 
+The model is defined as
+\bea H=gR_\uparrow^\dag R_\downarrow^\dag L_\downarrow L_\uparrow + h.c. \eea
+whose partition function is
 \bea Z&=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int{ \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma -g(\bar{R}_\uparrow \bar{R}_\downarrow L_\downarrow L_\uparrow + h.c.)} }} \\
-      &=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int {\bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +g(\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow)(R_\downarrow R_\uparrow-L_\downarrow L_\uparrow) - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow}}}  \\
-      &=&\int{ \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow }}} \\
-      &=&\int \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \sum_k \frac{(-g)^k}{k!}(\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow +\bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow)^k \nonumber\\ 
-      &&  \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  }} \\
-      &=&\int \mathcal{D}\phi\me^{\int -\frac{1}{g}\phi^*\phi } \sum_k \frac{(-g)^k}{k!} D_{2k}[\phi] \eea
-where $D_{2k}$ is a determent of a rank-$2k$ matrix filled with Green's functions. Such an expression is a convergent series expansion as a result of a fluctuating boson field $\phi$. We can perform a Monte Carlo simulation based on this expansion, called interaction-expansion continuous time quantum Monte Carlo. (Rubtsov {\it et al.} 2006) In this formula, the exact Green's function is given by 
-\bea G_R=\frac{1}{Z}\int \mathcal{D}\phi\me^{\int -\frac{1}{g}\phi^*\phi } \sum_k \frac{(-g)^k}{k!} D_{2k+1}[\phi] =\langle \frac{D_{2k+1}}{D_{2k}}\rangle\eea
+&=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int {\bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +g(\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow)(R_\downarrow R_\uparrow-L_\downarrow L_\uparrow) - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow}}}  \\
+&=&\int{ \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow }}} \\
+&=&\int \mathcal{D}R\mathcal{D}L\mathcal{D}\phi \sum_k \frac{(-g)^k}{k!} \int \md^k\tau \mathcal{T}_\tau (\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow +\bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow)^k \nonumber\\ 
+&&  \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  }} \\
+&\rightarrow&\int \mathcal{D}\phi\sum_k\frac{(-g)^k}{k!}\int \md^k\tau\mathcal{T}_\tau(\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{\mathrm{Tr}\log(\partial_\tau+\hat{\phi})+\mathrm{Tr}\log(\partial_\tau-\hat{\phi})+\bar{\eta}(\partial_\tau+\hat{\phi})\eta+\bar{\xi}(\partial_\tau-\hat{\phi})\xi-\frac1g\phi^*\phi} \\
+&=& \int \mathcal{D}\phi \sum_k \frac{(-g)^k}{k!}\int \md^k\tau \mathcal{T}_\tau (\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{S[\phi,\eta,\xi]} \eea
+where we have introduced the source $\eta$ and $\xi$ coupled to $R$ and $L$, respectively.
+The exact Green's function $G_R$ is given by
+\bea \hat{G}_R&=&\frac{1}{Z}\int \mathcal{D}\phi \sum_k \frac{(-g)^k}{k!} \int\md^k\tau\mathcal{T}_\tau \partial_{\bar{\eta}} \partial_\eta (\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{S[\phi,\eta,\xi]} \\
+&=&\frac{\int\mathcal{D}\phi \left[\sum {\rm connected}\right]_\phi\left[\sum {\rm closed}\right]_\phi \me^{S[\phi]} }{\int\mathcal{D}\phi \left[\sum {\rm closed}\right]_\phi \me^{S[\phi]}}
+\eea
+Clearly, if without $\phi$, the closed diagrams can be canceled. But when $\phi$ exists, we cannot do such a simplification unless $|\phi|$ is pinned at a fixed value like in $T=\infty$ and $T=0$ limits. The former is just the usual diagrammatic expansion while the latter is the mean field theory. 
 
-Let us seek an analytical approximation. A useful approximation is $\phi(\tau)=\phi$, \ie time independent. Then, we have
-\bea Z=\int \md \phi \sum_k \frac{(-g)^k}{k!} D_{2k}(\phi) \me^{-\frac{\beta}{g}\phi^*\phi} \eea 
-A second approximation is to truncate $k$ with a upper bound $N_k$. 
+Next, let us seek an (semi-)analytical treatment. A useful approximation is $\phi(\tau)=\phi$, \ie time independent. ({\color{red}How to justify this?}) Then, $\int \mathcal{D}\phi\rightarrow\int\md\phi$ and
+\bea S(\phi)=2\log(1+\me^{-\beta|\phi|})+2\log(1+\me^{\beta|\phi|})-\frac{\beta|\phi|^2}{g} \eea  
 
-When $N_k=0$,
-%\bea Z=\int \md \phi \me^{-\frac{\beta}{g}\phi^*\phi} \eea
+A second approximation is to truncate $k$ with a upper bound $N_k$. When $N_k=0$, we have omitted all closed diagrams, \ie $\sum[{\rm closed}]=1$. Then, we have
+\bea G_R=\left. \int\md \phi \frac{1}{2}\left(\frac{1}{i\omega_n-|\phi|}+\frac{1}{i\omega_n+|\phi|}\right) \me^{S(\phi)}  \middle/ \int\md  \phi \me^{S(\phi)}\right. \eea
 
-\bea G_R=\frac{1}{Z}\int\md \phi \frac{1}{2}\left(\frac{1}{i\omega_n-|\phi|}+\frac{1}{i\omega_n+|\phi|}\right)\me^{-\beta F(\phi)} \eea
-where
-\bea F=-2T\log(1+\me^{-\beta|\phi|})-2T\log(1+\me^{\beta|\phi|})+\frac{|\phi|^2}{g} \eea 
 
 Next, let's set $N_k=1$.
 
