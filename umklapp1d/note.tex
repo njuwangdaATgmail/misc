@@ -86,19 +86,21 @@ Next, let us seek an (semi-)analytical treatment. Let's first try the approximat
 A second approximation is to truncate $k$ with a upper bound $N_k$. When $N_k=0$, we have omitted all closed diagrams, \ie $\sum[{\rm closed}]=1$. Then, we have
 \bea G_R=\left. \int\md \phi \frac{1}{2}\left(\frac{1}{i\omega_n-|\phi|}+\frac{1}{i\omega_n+|\phi|}\right) \me^{S(\phi)}  \middle/ \int\md  \phi \me^{S(\phi)}\right. \eea
 
-Next, let's set $N_k=1$. However, the result becomes worse. The reason may be the approximation of uniform $|\phi(\tau)|$ which is severely broken in the middle temperature regime.  
-\begin{figure}
+Next, let's set $N_k=1$. However, the result becomes worse. The reason is the amplitude fluctuations can not be neglected in the middle temperature regime.  
+\begin{figure}[h]
     \begin{center}
     \includegraphics[width=0.5\textwidth]{uniformphi.eps}
     \caption{Approximation of time-independent $\phi$.}
     \end{center}
 \end{figure}
 
-When $\phi$ depends on $\tau$, or equivalent $i\nu_n$, the bare Green's function depends on two frequencies and can be written as
+When $\phi$ depends on $\tau$, or equivalently $i\nu_n\ne0$, the bare Green's function depends on two frequencies and can be written as
 \bea G_{0R}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')-\phi(i\omega_n-i\omega_n')\sigma_+-\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
 and
 \bea G_{0L}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')+\phi(i\omega_n-i\omega_n')\sigma_++\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
-Similarly, the self energy (with a fixed $\phi$) should also depends on two frequencies.
+Or, we can take $\phi$ as an dynamical impurity without reserving the frequency. 
+
+When $N_k=0$, the result should be the same as only $\phi(i\nu_n=0)$ has contributions after integrating out the $\phi$ field.
 
 
 
