@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.1in]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -52,13 +52,14 @@
 %===============================================
 \begin{document}
 \title{Two-points umklapp model}
-\author{Da Wang}%\thanks{dawang@nju.edu.cn} \\ \\National Laboratory of Solid State Microstructures $\&$ School of Physics, \\ Nanjing University, Nanjing, 210093, China}
+%\author{Da Wang}%\thanks{dawang@nju.edu.cn} \\ \\National Laboratory of Solid State Microstructures $\&$ School of Physics, \\ Nanjing University, Nanjing, 210093, China}
 \date{}
 \maketitle
 
-\begin{abstract}
-We are seeking a diagrammatic treatment of the two-points umklapp model.
-\end{abstract}
+%\begin{abstract}
+We are seeking a diagrammatic treatment of the two-points umklapp model. It seems we are doing a trick
+\bea \sum_k\int\mathcal{D}\phi \ne \int\mathcal{D}\phi\sum_k \eea
+%\end{abstract}
 
 %\tableofcontents
 %=================================================
@@ -73,7 +74,7 @@ The partition function is
 &&  \me^{ \int{  \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +[\phi (\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow) + h.c.]-\frac1g\phi^*\phi  }} \\
 &\rightarrow&\int \mathcal{D}\phi\sum_k\frac{(-g)^k}{k!}\int \md^k\tau\mathcal{T}_\tau(\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \nonumber\\&& \me^{\mathrm{Tr}\log(\partial_\tau+\hat{\phi})+\mathrm{Tr}\log(\partial_\tau-\hat{\phi})+\bar{\eta}(\partial_\tau+\hat{\phi})^{-1}\eta+\bar{\xi}(\partial_\tau-\hat{\phi})^{-1}\xi-\frac1g\phi^*\phi} \\
 &=& \int \mathcal{D}\phi \sum_k \frac{(-g)^k}{k!}\int \md^k\tau \mathcal{T}_\tau (\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{S[\phi,\eta,\xi]} \eea
-where we have introduced the source $\eta$ and $\xi$ coupled to $R$ and $L$, respectively.
+where we have introduced the source $\eta$ and $\xi$ coupled to $R$ and $L$, respectively. 
 The exact Green's function $G_R$ is given by
 \bea \hat{G}_R&=&\frac{1}{Z}\int \mathcal{D}\phi \sum_k \frac{(-g)^k}{k!} \int\md^k\tau\mathcal{T}_\tau \partial_{\bar{\eta}} \partial_\eta (\partial_{\eta_\uparrow}\partial_{\eta_\downarrow}\partial_{\bar{\eta}_\downarrow}\partial_{\bar{\eta}_\uparrow}+\partial_{\xi_\uparrow}\partial_{\xi_\downarrow}\partial_{\bar{\xi}_\downarrow}\partial_{\bar{\xi}_\uparrow})^k \me^{S[\phi,\eta,\xi]} \\
 &=&\frac{\int\mathcal{D}\phi \left[\sum {\rm connected}\right]_\phi\left[\sum {\rm closed}\right]_\phi \me^{S[\phi]} }{\int\mathcal{D}\phi \left[\sum {\rm closed}\right]_\phi \me^{S[\phi]}}
@@ -89,18 +90,67 @@ A second approximation is to truncate $k$ with a upper bound $N_k$. When $N_k=0$
 Next, let's set $N_k=1$. However, the result becomes worse. The reason is the amplitude fluctuations can not be neglected in the middle temperature regime.  
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[width=0.5\textwidth]{uniformphi.eps}
+    \includegraphics[width=0.8\textwidth]{result.eps}
     \caption{Approximation of time-independent $\phi$.}
     \end{center}
 \end{figure}
 
-When $\phi$ depends on $\tau$, or equivalently $i\nu_n\ne0$, the bare Green's function depends on two frequencies and can be written as
+When $\phi$ depends on $\tau$, or equivalently $i\nu_n\ne0$, the bare Green's function under a given $\phi$ depends on two frequencies and can be written as
 \bea G_{0R}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')-\phi(i\omega_n-i\omega_n')\sigma_+-\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
 and
 \bea G_{0L}^{-1}(i\omega_n,i\omega_n')=i\omega_n\delta(\omega_n-\omega_n')+\phi(i\omega_n-i\omega_n')\sigma_++\phi^*(i\omega_n-i\omega_n')\sigma_- \eea
-Or, we can take $\phi$ as an dynamical impurity without reserving the frequency. 
+Now the bare action $S[\phi]$ becomes
+\bea S[\phi]=\mathrm{Tr}\log(\partial_\tau+\hat{\phi})+\mathrm{Tr}\log(\partial_\tau-\hat{\phi})-\frac{T}{g} \sum_{i\nu_n}|\phi(\nu_n)|^2=S_0[\phi_0]+\delta S[\phi_0,\delta\phi] \eea
+where $\phi=\phi_0+\delta\phi$ with $\phi_0$ the uniform field. One reasonable(?) approximation is to suppose $\delta\phi$ much smaller than $\phi_0$ such that we can expand $\delta S$ with respect to $\delta\phi$ up to the second order. (Higher order expansions can be performed but difficult to integrate out.) 
+\bea \delta S=-\frac12\sum_{R,L}\mathrm{Tr}(G_0^{R,L}\delta\phi G_0^{R,L} \delta\phi)  -\frac{T}{g}\sum_{\nu_0\ne0}\phi^*(\nu_n)\phi(\nu_n) \eea
+where $G_0^{R,L}$ are the bare Green's function under the uniform $\phi_0$. Notice that $G_0^{R,L}$ and $\delta\phi$ are both matrices. The source terms can also be expand with respect to $\delta\phi$. Put the above together, we have
+\bea S&=&2\log(1+\me^{-\beta|\phi_0|})+2\log(1+\me^{\beta|\phi_0|})-\frac{\beta|\phi_0|^2}{g}\nonumber\\
+&& -\frac12\mathrm{Tr}(G_0^{R}\delta\phi G_0^{R} \delta\phi) -\frac12\mathrm{Tr}(G_0^{L}\delta\phi G_0^{L} \delta\phi) -\frac{T}{g}\sum_{\nu_0\ne0}\phi^*(\nu_n)\phi(\nu_n) \nonumber\\&&-\bar{\eta}(G_0^R+G_0^R\delta\phi G_0^R+G_0^R\delta\phi G_0^R\delta\phi G_0^R+\cdots)\eta \nonumber\\&&-\bar{\xi}(G_0^L-G_0^L\delta\phi G_0^L+G_0^L\delta\phi G_0^L\delta\phi G_0^L+\cdots)\xi \eea
+Notice that at this step, we cannot trace out $\delta\phi$ directly otherwise the source terms would become too complicated.
 
-When $N_k=0$, the result should be the same as only $\phi(i\nu_n=0)$ has contributions after integrating out the $\phi$ field.
+\bea &&\mathrm{Tr}(G_0^R\delta\phi G_0^R\delta\phi)\nonumber\\&=&T^2\sum_{i\nu_n,i\omega_n}\left[G_{11}^R(i\omega_n)G_{22}^R(i\omega_n+i\nu_n)\phi^*(\nu_n)\phi(\nu_n)+G_{22}^R(i\omega_n)G_{11}^R(i\omega_n+i\nu_n)\phi^*(-\nu_n)\phi(-\nu_n) \right. \nonumber\\
+&&\left.+G_{12}^R(i\omega_n)G_{12}^R(i\omega_n+i\nu_n)\phi^*(\nu_n)\phi^*(-\nu_n)+G_{21}^R(i\omega_n)G_{21}^R(i\omega_n+i\nu_n)\phi(\nu_n)\phi(-\nu_n)\right] \nonumber\\
+&=&-T\sum_{i\nu_n}\frac{|\phi_0|}{\nu_n^2+4|\phi_0|^2}\tanh\left(\frac{\beta|\phi_0|}{2}\right)\left[\phi^*(\nu_n)\phi(\nu_n)+\phi^*(-\nu_n)\phi(-\nu_n)-\frac{\phi_0^2}{|\phi_0|^2}\phi^*(\nu_n)\phi^*(-\nu_n)-\frac{\phi_0^{*2}}{|\phi_0|^2}\phi(\nu_n)\phi(-\nu_n)\right]\nonumber \\
+&=& \mathrm{Tr}(G_0^L\delta\phi G_0^L\delta\phi)
+\eea
+
+Then \bea \delta S&=&T\sum_{\nu_n\ne0}\frac{|\phi_0|}{\nu_n^2+4|\phi_0|^2}\tanh\left(\frac{\beta|\phi_0|}{2}\right)\left[\phi^*(\nu_n)\phi(\nu_n)+\phi^*(-\nu_n)\phi(-\nu_n)-\frac{\phi_0^2}{|\phi_0|^2}\phi^*(\nu_n)\phi^*(-\nu_n)-\frac{\phi_0^{*2}}{|\phi_0|^2}\phi(\nu_n)\phi(-\nu_n)\right] \nonumber\\ &&- \frac{T}{g}\sum_{\nu_n\ne0}\phi^*(\nu_n)\phi(\nu_n) \nonumber\\
+&=&-\sum_{\nu_n>0}\begin{bmatrix}
+    \phi^*(\nu_n) & \phi(-\nu_n)
+\end{bmatrix}\begin{bmatrix}
+\frac{T}{g}-\frac{2T|\phi_0|\tanh(\beta|\phi_0|/2)}{\nu_n^2+4|\phi_0|^2} & \frac{\phi_0^2}{|\phi_0|^2}\frac{2T|\phi_0|\tanh(\beta|\phi_0|/2)}{\nu_n^2+4|\phi_0|^2} \\ \frac{\phi_0^{*2}}{|\phi_0|^2}\frac{2T|\phi_0|\tanh(\beta|\phi_0|/2)}{\nu_n^2+4|\phi_0|^2} & \frac{T}{g}-\frac{2T|\phi_0|\tanh(\beta|\phi_0|/2)}{\nu_n^2+4|\phi_0|^2}
+\end{bmatrix} \begin{bmatrix}
+\phi(\nu_n) \\ \phi^*(-\nu_n)
+\end{bmatrix}\eea
+
+
+When $N_k=0$, $[closed]=1$ and 
+\bea [connected]=G_0^R+G_0^R\delta\phi G_0^R+G_0^R\delta\phi G_0^R\delta\phi G_0^R+\cdots \eea
+The first order will vanish. Higher orders are omitted. We then have
+\bea [connected]_{R11}&=&G_0^R+G_0^R\delta\phi G_0^R\delta\phi G_0^R \nonumber\\
+&=&G_{11}^R(i\omega_n)+T\sum_{i\nu_n}G_{11}(i\omega_n)\phi(\nu_n)G_{21}(i\omega_n+i\nu_n)\phi(-\nu_n)G_{21}(i\omega_n) \nonumber\\
+&& + G_{11}(i\omega_n)\phi(\nu_n)G_{22}(i\omega_n+i\nu_n)\phi^*(\nu_n)G_{11}(i\omega_n) \nonumber\\
+&& + G_{12}(i\omega_n)\phi^*(-\nu_n)G_{11}(i\omega_n+i\nu_n)\phi(-\nu_n)G_{21}(i\omega_n) \nonumber\\
+&& + G_{12}(i\omega_n)\phi^*(-\nu_n)G_{12}(i\omega_n+i\nu_n)\phi^*(\nu_n)G_{11}(i\omega_n) \nonumber\\
+&=& G_{11}^R(i\omega_n) + T\sum_{\nu_n>0}\begin{bmatrix}
+    \phi^*(\nu_n) & \phi(-\nu_n)
+\end{bmatrix}\begin{bmatrix}
+a & b\\c &d
+\end{bmatrix} \begin{bmatrix}
+\phi(\nu_n) \\ \phi^*(-\nu_n)
+\end{bmatrix}
+\eea
+where 
+\bea a=G_{11}(i\omega_n)G_{22}(i\omega_n+i\nu_n)G_{11}(i\omega_n)+G_{12}(i\omega_n)G_{11}(i\omega_n-i\nu_n)G_{21}(i\omega_n) \eea
+\bea b=G_{12}(i\omega_n)G_{12}(i\omega_n+i\nu_n)G_{12}(i\omega_n)+G_{12}(i\omega_n)G_{12}(i\omega_n-i\nu_n)G_{12}(i\omega_n) \eea
+\bea c=G_{11}(i\omega_n)G_{21}(i\omega_n+i\nu_n)G_{21}(i\omega_n)+G_{11}(i\omega_n)G_{21}(i\omega_n-i\nu_n)G_{21}(i\omega_n) \eea
+\bea d=G_{12}(i\omega_n)G_{11}(i\omega_n+i\nu_n)G_{21}(i\omega_n)+G_{11}(i\omega_n)G_{22}(i\omega_n-i\nu_n)G_{11}(i\omega_n) \eea
+
+Using the identity
+\bea \int \md X^* \md X (A_0+X^\dag A_2 X)\me^{-X^\dag D X}=\det(D)^{-1}[A_0+{\rm tr}(A_2D^{-1})] \eea
+we can trace out $\delta\phi$. {\color{red} Notice: $\det(D)$ can be negative under a given $\phi_0$ in which case, we need to use $|\det{D}|$ as the weight and $-G$ as the measurable just like what we do in QMC.}
+
+We fail again! When $\det(D)$ is very small, the fluctuation of $\delta\phi$ can be very strong so as to break the perturbation condition!
 
 
 
