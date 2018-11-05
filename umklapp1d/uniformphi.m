@@ -2,7 +2,7 @@ function[G0,Sig0,G0exact,Sig0exact,closed]=uniformphi(beta,Nk)
 g=1;
 
 dphi=0.01;
-phi=0:dphi:10*g;  % |phi|^2>>T*g, where g=1
+phi=0:dphi:100*g;  % |phi|^2>>T*g, where g=1
 iw0=1i*pi/beta;
 
 G11=0.5*(1./(iw0-phi)+1./(iw0+phi));
