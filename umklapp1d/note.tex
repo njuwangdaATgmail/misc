@@ -1,5 +1,5 @@
-\documentclass[12pt]{article}
-\usepackage[margin=0.1in]{geometry}
+\documentclass[10pt]{article}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -59,6 +59,7 @@
 %\begin{abstract}
 We are seeking a diagrammatic treatment of the two-points umklapp model. It seems we are doing a trick
 \bea \sum_k\int\mathcal{D}\phi \ne \int\mathcal{D}\phi\sum_k \eea
+In fact, the strategy is somewhat in parallel with Hertz (1976). 
 %\end{abstract}
 
 %\tableofcontents
@@ -66,6 +67,7 @@ We are seeking a diagrammatic treatment of the two-points umklapp model. It seem
 The model is defined as
 \bea H=gR_\uparrow^\dag R_\downarrow^\dag L_\downarrow L_\uparrow + h.c. \eea
 
+\section{HS field representation}
 The partition function is
 \bea Z&=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int{ \bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma -g(\bar{R}_\uparrow \bar{R}_\downarrow L_\downarrow L_\uparrow + h.c.)} }} \\
 &=&\int{ \mathcal{D}R\mathcal{D}L \me^{\int {\bar{R}_\sigma (-\partial\tau)R_\sigma + \bar{L}_\sigma (-\partial\tau)L_\sigma +g(\bar{R}_\uparrow \bar{R}_\downarrow-\bar{L}_\uparrow \bar{L}_\downarrow)(R_\downarrow R_\uparrow-L_\downarrow L_\uparrow) - g\bar{R}_\uparrow \bar{R}_\downarrow R_\downarrow R_\uparrow -g \bar{L}_\uparrow \bar{L}_\downarrow L_\downarrow L_\uparrow}}}  \\
@@ -150,17 +152,71 @@ Using the identity
 \bea \int \md X^* \md X (A_0+X^\dag A_2 X)\me^{-X^\dag D X}=\det(D)^{-1}[A_0+{\rm tr}(A_2D^{-1})] \eea
 we can trace out $\delta\phi$. {\color{red} Notice: $\det(D)$ can be negative under a given $\phi_0$ in which case, we need to use $|\det{D}|$ as the weight and $-G$ as the measurable just like what we do in QMC.}
 
-We fail again! When $\det(D)$ is very small, the fluctuation of $\delta\phi$ can be very strong so as to break the perturbation condition!
+We fail again! When $\det(D)$ is very small, the fluctuation of $\delta\phi$ can be very strong so as to break the perturbation condition! {\color{red} This is easy to understand. Since we have neglected higher order terms and thus enlarged the fluctuations of $\delta\phi$. Inclusion of the fourth order term may (or may not) eliminate the problem.}
+%\section{equation of motion}
+
+\section{Slave fermion representation}
+\bea H=g(d_R^\dag e_R e_L^\dag d_L + e_R^\dag d_R d_L^\dag e_L )(1+S_{R\uparrow}^\dag S_{R\uparrow} + S_{R\downarrow}^\dag S_{R\downarrow})(1+S_{L\uparrow}^\dag S_{L\uparrow} + S_{L\downarrow}^\dag S_{L\downarrow}) \eea
+The constraints $d_R^\dag d_R+e_R^\dag e_R+S_{R\uparrow}^\dag S_{R\uparrow} + S_{R\downarrow}^\dag S_{R\downarrow}=1$ and $(R\rightarrow L)$ can be substituted directly
+\bea H=g(d_R^\dag e_R e_L^\dag d_L + e_R^\dag d_R d_L^\dag e_L )(2-d_R^\dag d_R -e_R^\dag e_R)(2-d_L^\dag d_L - e_L^\dag e_L) \eea
+We can further make a particle hole transformation $d\rightarrow d^\dag$ and $e\rightarrow e^\dag$, we get
+\bea H=g(d_R^\dag e_R e_L^\dag d_L + e_R^\dag d_R d_L^\dag e_L )(d_R^\dag d_R + e_R^\dag e_R)(d_L^\dag d_L + e_L^\dag e_L) \eea
+Amazingly, this is just
+\bea H=g(d_R^\dag e_R e_L^\dag d_L + e_R^\dag d_R d_L^\dag e_L ) \eea
+which is exactly the original Hamiltonian after we identify 
+\bea d_R = R_\uparrow, e_R=R_\downarrow^\dag, e_L=L_\downarrow^\dag, d_L=L_\uparrow \eea
+Therefore, in this two-points model, the slave fermion representation is equal to the original one. Then according to our understanding, we conclude that the doublon and holon only form bound state in the sense that $\langle \hat{\Delta} \rangle=0$ but $\langle \hat{\Delta}^\dag\Delta \rangle\ne0$. Another important issue is the poles of the Green's function cannot change as the temperature varies which is seen in the exact solution. But any mean field based calculation clearly violates such a property and thus cannot be totally correct.
+
 
 \section{equation of motion}
-When $0<\tau<\beta$,
-\bea \ddt \left\langle A(\tau)B^\dag(0)\right\rangle=\left\langle [H,A(\tau)]B^\dag(0)\right\rangle \eea
+\bea H=vk R_{k\sigma}^\dag R_{k\sigma}-vk L_{k\sigma}^\dag L_{k\sigma} + g(R_{k\uparrow}^\dag R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow} + h.c.) \eea
 
-\bea \ddt\left\langle R_\uparrow(\tau) R_\uparrow^\dag(0)\right\rangle = -g\left\langle R_\downarrow^\dag(\tau)L_\downarrow(\tau)L_\uparrow(\tau)R_\uparrow^\dag(0)\right\rangle \eea
+\bea \partial_\tau\underbrace{\left\langle R_{k\uparrow}(\tau) R_{k\uparrow}(0)^\dag \right\rangle}_{G_{R\uparrow}(k,\tau)} = \left\langle \underbrace{\left[H,R_{k\uparrow}\right]}_{\tau}  R_{k\uparrow}^\dag(0)\right\rangle - 1 \eea
 
-\bea \ddt\left\langle R_\downarrow^\dag(\tau)L_\downarrow(\tau)L_\uparrow(\tau)R_\uparrow^\dag(0)\right\rangle = -g \left\langle \underbrace{R_\uparrow(L_\uparrow^\dag L_\uparrow L_\downarrow^\dag L_\downarrow - L_\downarrow^\dag L_\downarrow R_\downarrow^\dag R_\downarrow -L_\uparrow^\dag L_\uparrow R_\downarrow^\dag R_\downarrow +R_\downarrow^\dag R_\downarrow )}_{\tau} R_\uparrow^\dag(0)\right\rangle\eea
+\bea \left[ H,R_{k\uparrow} \right] = -vkR_{k\uparrow}-gR_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow} \eea
 
-\bibliography{bibfile}
+\bea \partial_\tau G_{R\uparrow}(k,\tau) = -vkG_{R\uparrow}(k,\tau) -g \underbrace{\left\langle \underbrace{R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow}}_{\tau} R_{k\uparrow}(0)^\dag  \right\rangle}_{\text{(1)}} -1 \eea  
+
+
+\bea \left[H,R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow}\right]&=& -v(k-2q)R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow} \nonumber\\
+&&-g L_{\tilde{k}'\uparrow}^\dag L_{k'\uparrow} L_{-\tilde{k}'+\tilde{q}\downarrow}^\dag L_{-k'+q\downarrow} R_{-\tilde{k}+\tilde{q}\downarrow} R_{-k+q\downarrow}^\dag R_{\tilde{k}\uparrow} \nonumber\\
+&&-g L_{k'\uparrow} L_{\tilde{k}'\uparrow}^\dag L_{-k'+q\downarrow} L_{-\tilde{k}'+\tilde{q}\downarrow}^\dag R_{-k+q\downarrow}^\dag R_{-\tilde{k}+\tilde{q}\downarrow} R_{\tilde{k}\uparrow}
+\eea
+which can be further simplified if $\tilde{k},\tilde{k}',\tilde{q}$ are chosen as special values, e.g. $\tilde{k}'=k'$ or $-\tilde{k}'+\tilde{q}=-k'+q$ or $-\tilde{k}+\tilde{q}=-k+q$. At this stage, let us just keep it the general form otherwise we will have so many terms. 
+
+\bea \partial_\tau\text{(1)}&=&-v(k-2q){\text(1)} \nonumber\\
+&&-g\underbrace{\left\langle \underbrace{L_{\tilde{k}'\uparrow}^\dag L_{k'\uparrow} L_{-\tilde{k}'+\tilde{q}\downarrow}^\dag L_{-k'+q\downarrow} R_{-\tilde{k}+\tilde{q}\downarrow} R_{-k+q\downarrow}^\dag R_{\tilde{k}\uparrow}}_{\tau} R_{k\uparrow}^\dag(0) \right\rangle}_{\text{(2)}} \nonumber\\
+&&-g\underbrace{\left\langle \underbrace{L_{k'\uparrow} L_{\tilde{k}'\uparrow}^\dag L_{-k'+q\downarrow} L_{-\tilde{k}'+\tilde{q}\downarrow}^\dag R_{-k+q\downarrow}^\dag R_{-\tilde{k}+\tilde{q}\downarrow} R_{\tilde{k}\uparrow}}_{\tau} R_{k\uparrow}^\dag(0) \right\rangle}_{\text{(2')}} \eea 
+
+When calculating (2) and (2'), we have to choose a cutoff. How to do it? At first, let's try a rough approximation: $\tilde{k}=k, \tilde{k}'=k', \tilde{q}=q$ which means we neglect all momentum transfer terms for each branch and spin, by setting $c_k^\dag c_{k'}=c_k^\dag c_k \delta_{kk'}$. Then we have
+\bea \partial_\tau\text{(1)}&\approx&-v(k-2q){\text(1)} \nonumber\\
+&&-g\underbrace{\left\langle \underbrace{L_{{k}'\uparrow}^\dag L_{k'\uparrow} L_{-{k}'+{q}\downarrow}^\dag L_{-k'+q\downarrow} R_{-{k}+{q}\downarrow} R_{-k+q\downarrow}^\dag R_{{k}\uparrow}}_{\tau} R_{k\uparrow}^\dag(0) \right\rangle}_{\text{(2)}} \nonumber\\
+&&-g\underbrace{\left\langle \underbrace{L_{k'\uparrow} L_{{k}'\uparrow}^\dag L_{-k'+q\downarrow} L_{-{k}'+{q}\downarrow}^\dag R_{-k+q\downarrow}^\dag R_{-{k}+{q}\downarrow} R_{{k}\uparrow}}_{\tau} R_{k\uparrow}^\dag(0) \right\rangle}_{\text{(2')}} \eea 
+
+\bea \partial_\tau \text{(2)} &\approx& -vk \text{(2)} - \alpha \nonumber\\
+&& -g \left\langle \underbrace{R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow} R_{k\uparrow}^\dag R_{k\uparrow}}_{\tau} R_{k\uparrow}^\dag(0) \right\rangle 
+\eea
+
+\bea \partial_\tau \text{(2')} &\approx& -vk \text{(2')} - \alpha' \nonumber\\
+&& -g \left\langle \underbrace{R_{-k+q\downarrow}^\dag L_{-k'+q\downarrow} L_{k'\uparrow} R_{k\uparrow} R_{k\uparrow}^\dag }_{\tau} R_{k\uparrow}^\dag(0) \right\rangle 
+\eea
+
+Then
+\bea \partial_\tau (2+2')\approx -vk(2+2') - (\alpha+\alpha') -g(1) \eea
+
+Now we get a closed set of equations:
+\bea \partial_\tau G &=& -vkG-g\chi_1-1 \nonumber\\
+ \partial_\tau \chi_1 &=& -v(k-2q)\chi_1-g\chi_2 \nonumber\\
+ \partial_\tau \chi_2 &=& -vk\chi_2 -g\chi_1 -\alpha  \eea
+
+The Green's function is obtained
+\bea G_{R\uparrow}(k,i\omega_n)=\frac{1}{i\omega_n-vk}+\frac{ g^2}{L^2}\sum_{k'q}\frac{\alpha(k,k',q)}{(i\omega_n-vk)[(i\omega_n-vk)(i\omega_n-vk+2vq)-g^2]} \eea
+where
+\bea \alpha(k,k',q)&=&\left\langle L_{{k}'\uparrow}^\dag L_{k'\uparrow} L_{-{k}'+{q}\downarrow}^\dag L_{-k'+q\downarrow} R_{-{k}+{q}\downarrow} R_{-k+q\downarrow}^\dag\right\rangle \nonumber\\&+& \left\langle L_{k'\uparrow} L_{{k}'\uparrow}^\dag L_{-k'+q\downarrow} L_{-{k}'+{q}\downarrow}^\dag R_{-k+q\downarrow}^\dag R_{-{k}+{q}\downarrow} \right\rangle \eea
+The bad news is: we know little about such the three-particle quantity $\alpha(k,k',q)$. Although it can be further simplified as two-particle quantities, it is still very difficult.
+
+
+%\bibliography{bibfile}
 %\begin{thebibliography}{99}
 %	\bibitem{xxxx} xxxx, PRL 88, 888888 (2088).
 %\end{thebibliography}

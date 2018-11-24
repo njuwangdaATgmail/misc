@@ -1,0 +1,52 @@
+Dear Editor,
+
+Thank you for sending us the Referee's report. We have made some modifications of the manuscript and answered all his/her questions. We hope the new manuscript can be considered again. 
+
+A list of main changes and a reply to the Referee are listed below.
+
+Thank you very much,
+
+Best regards,
+Da
+
+-----------------------------
+  List of main changes
+-----------------------------
+
+1. In the 1st paragraph of Introduction, "The key point is that the entanglement boundary in some sense mimics the physical boundary" is changed to "Such a relation can be understood by the similarity between the entanglement boundary and the physical boundary".
+
+2. In the 2nd paragraph of Introduction, "when the corners of the subsystem match the full lattice" is changed to "when the corners of the subsystem match the full lattice, i.e. with two sides of the corners along (10) and (01) directions,".
+
+3. In the paragraph below fig 3, "While the corner contributions are from the short range entangled (gapped) bulk states near the non-smooth entanglement boundaries." is changed to "It can only come from the conrner contributions caused by the short range entangled (gapped) bulk states near the non-smooth entanglement boundaries."
+
+4. At the end of the first paragraph on page 4, we have added "We have also applied our method to the quadrupole topological insulator model [22] and obtained the same universal value."
+
+5. Some grammar mistakes are corrected and some vague expressions are modified. 
+
+----------------------------
+  Reply to the Referee
+----------------------------
+Dear Referee,
+
+We first thank you for reading our manuscript and making an objective judgement. We have accepted all your criticisms/suggestions carefully and made corresponding corrections to the manuscript. The replies to your questions are listed below.
+
+>>Referee: "Page 1, first paragraph: "in some sense" is too vague. Please elaborate."
+
+In the modified version, we delete the phrase "in some sense" and the whole sentence is now changed to "Such a relation can be understood by the similarity between the entanglement boundary and physical boundary which is further ..."
+
+>>Referee: "-Page 1, second paragraph: "only when the corners of the subsystem match the full lattice" It is not clear at this point what is meant by this phrase. Please provide a clearer explanation."
+
+In this version, we add an explanation of the phrase "match the full lattice": "i.e. with two sides of the corners along (10) and (01) directions,"
+
+>>Referee: "-Page 3, last paragraph: "While the corner contributions are from the short-range entangled (gapped) bulk states near the non-smooth entanglement boundaries." This sentence lacks meaning. Perhaps there had to be a comma, instead of a period, at the end of the previous sentence."
+
+In this version, the sentence is modified to "It can only come from the conrner contributions caused by the short range entangled (gapped) bulk states near the non-smooth entanglement boundaries."
+
+>>Referee: "Finally, it would be interesting to repeat this analysis for the Quadrupole Insulator model (ref [22] of the manuscript). After all, the analysis towards the end for the 4 site problem puts a pi flux in them, just as in the lattice of ref [22]. Finding the universal value in this model will further strengthen the argument that the value is indeed universal."
+
+We have made calculations on the quadrupole insulator model defined in ref [22] and obtained similar results, in particular the same universal value 0.2797. Because the results are very similar to fig 3, we have not shown the results in the manuscript directly but added a sentense to strengthen the conclusion: "We have also applied our method to the quadrupole topological insulator model \cite{Benalcazar_S_2017} and obtained the same universal value."
+
+Above all, we hope you to reconsider our manuscript again. 
+Thank you very much,
+Best regards,
+Da
